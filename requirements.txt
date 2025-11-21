@@ -9,6 +9,11 @@ pydantic-settings
 
 PyMuPDF
 python-docx
+weasyprint
+
+
+groq
+
 
 
 

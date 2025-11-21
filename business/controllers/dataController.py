@@ -2,6 +2,7 @@ from business import BaseController
 from fastapi import UploadFile
 from presentation.enums.responseEnum import ResponseSignal
 from utils import gb_to_bytes, extract_docs_text, extract_pdf_text
+import os 
 class DataController(BaseController):
     
     def __init__(self):
@@ -9,18 +10,21 @@ class DataController(BaseController):
         
     async def validate_uploaded_file(self, file:UploadFile):
         
-        if file.content_type not in self.app_settings.FILE_ALLOWED_TYPES:
-            return False , ResponseSignal.FILE_TYPE_NOT_SUPPORTED
+        filename = file.filename 
         
+        ext = os.path.splitext(filename)[1].lower().replace(".", "")
         
+        if ext not in self.app_settings.FILE_ALLOWED_TYPES:
+            return False
+
         contents = await file.read()
         max_bytes = gb_to_bytes(self.app_settings.FILE_MAX_SIZE)
 
         if len(contents) > max_bytes:
-            return False , ResponseSignal.FILE_SIZE_EXCEEDED
+            return False
 
         await file.seek(0)
-        return True, ResponseSignal.FILE_UPLOADED_SUCCESFULLY
+        return True
     
     
     async def extractFileText(self, file: UploadFile):

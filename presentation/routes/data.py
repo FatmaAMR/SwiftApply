@@ -8,7 +8,7 @@ data_router = APIRouter(prefix="/comprehensive-resume")
 @data_router.post("/upload")
 async def uploadCV(file: UploadFile, settings: Settings = Depends(get_settings), controller: DataController = Depends(DataController)):
     
-    is_valid, signal = await controller.validate_uploaded_file(file)
+    is_valid = await controller.validate_uploaded_file(file)
     
     
     if is_valid==True:
@@ -18,8 +18,7 @@ async def uploadCV(file: UploadFile, settings: Settings = Depends(get_settings),
     
     
     reponse_content = {
-            "success": is_valid,
-            "message": signal
+            "success": is_valid
             }
     
     return JSONResponse(

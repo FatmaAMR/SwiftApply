@@ -9,6 +9,9 @@ class Settings(BaseSettings):
     
     FILE_ALLOWED_TYPES: list
     FILE_MAX_SIZE: float
+    
+    GROQ_KEY:str
+    GROQ_MODEL_NAME:str
 
     class Config:
         env_file = ".env"
