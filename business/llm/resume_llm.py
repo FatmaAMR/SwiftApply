@@ -83,31 +83,72 @@ Return ONLY valid JSON (no markdown, no explanation) with these exact keys:
             }
         return analysis_json
 
-    async def generate_cv(self, parsed_cv: dict, analysis: dict, template_id: str) -> dict:
+    async def generate_cv(self, parsed_cv: dict, analysis: dict, job_description_text:str, company_info:str) -> dict:
         """
         Generate a final CV JSON using the parsed CV and analysis.
         """
         prompt = f"""
-You are a professional CV writer.
-Rewrite the candidate's CV to be perfectly tailored to the job, incorporating all recommendations from the analysis.
-Use template ID: {template_id}.
+            Generate:
+            1. Parsed, customized to the job description used to get the analysis results, CV structured into clear sections.
+            2. A professional cover letter tailored to the CV.
+            3. A professional email template for sending the CV and cover letter.
+            4. Recommended sections for improving the CV based on gaps.
+            5. Detect missing or incomplete sections and list them.
+            6. If some sections in the CV text are empty or unclear, return empty arrays or empty strings — do NOT invent content.
+            7. The JSON MUST be strictly valid and follow this exact structure:
 
-Output ONLY valid JSON with these exact keys (no markdown, no extra text):
-- header (dict with name, title, contact info, linkedin, etc.)
-- summary (string - professional summary)
-- skills (list of strings or categorized dict)
-- experience (list of job dicts with company, role, dates, bullets)
-- education (list of education dicts)
-- additional_sections (dict with certifications, projects, languages, etc.)
+            {{
+            "cv": {{
+                "header": {{}},
+                "summary": "",
+                "skills": [],
+                "experience": [],
+                "education": [],
+                "projects": [],
+                "certifications": [],
+                "languages": [],
+                "tools": [],
+                "additional_sections": {{}}
+            }},
+            "cover_letter": {{
+                "content": "",
+                "tone": "",
+                "length": ""
+            }},
+            "email_template": {{
+                "subject": "",
+                "body": ""
+            }},
+            "metadata": {{
+                "recommended_sections": [],
+                "missing_sections": [],
+                "warnings": []
+            }}
+            }}
 
-Candidate original data:
-{json.dumps(parsed_cv)}
+            Return ONLY the JSON.
 
-Analysis and recommendations:
-{json.dumps(analysis)}
-"""
+            Consider and use the following:
+
+            Candidate original data:
+            {json.dumps(parsed_cv)}
+
+            Analysis and recommendations:
+            {json.dumps(analysis)}
+            
+            Job description:
+            {job_description_text}
+            
+            Comapny kind of business and priorities:
+            {company_info}
+            
+            whaen writting all of CV, Coverletter, and Email content.
+
+            """
+
         messages = [
-            {"role": "system", "content": "You are a senior CV writer. Respond with clean, valid JSON only - nothing else."},
+            {"role": "system", "content": """You are a senior ATS-optimized CV writer. 
+            Always return CLEAN, VALID JSON ONLY. No explanations, no markdown, no notes."""},
             {"role": "user", "content": prompt}
         ]
 

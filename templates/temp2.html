@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ cv.header.name }} - CV</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 25px; }
+        h1 { margin-bottom: 0; }
+        .section-title { font-size: 20px; margin-top: 30px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h1>{{ cv.header.name }}</h1>
+    <p>{{ cv.header.email }} | {{ cv.header.phone }}</p>
+
+    <div class="section-title">Summary</div>
+    <p>{{ cv.summary }}</p>
+
+    <div class="section-title">Skills</div>
+    <ul>
+        {% for skill in cv.skills %}
+        <li>{{ skill }}</li>
+        {% endfor %}
+    </ul>
+
+    <div class="section-title">Experience</div>
+    {% for exp in cv.experience %}
+        <h3>{{ exp.role }} - {{ exp.company }}</h3>
+        <p>{{ exp.description }}</p>
+    {% endfor %}
+
+</body>
+</html>

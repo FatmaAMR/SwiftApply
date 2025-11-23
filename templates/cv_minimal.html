@@ -1,0 +1,31 @@
+<!-- templates/cv_minimal.html -->
+<html>
+<head>
+  <style>
+    body { font-family: Georgia; line-height: 1.5; margin: 30px; }
+    h1 { font-size: 28px; }
+    h2 { font-size: 20px; margin-top: 15px; }
+  </style>
+</head>
+<body>
+  <h1>{{ cv.header.name }}</h1>
+  <p>{{ cv.header.email }} | {{ cv.header.linkedin }}</p>
+  <p>{{ cv.summary }}</p>
+  {% if cv.skills %}
+    <h2>Skills</h2>
+    <p>{{ cv.skills | join(", ") }}</p>
+  {% endif %}
+  {% if cv.experience %}
+    <h2>Experience</h2>
+    {% for job in cv.experience %}
+      <p><b>{{ job.position }}</b>, {{ job.company }} ({{ job.duration }})</p>
+    {% endfor %}
+  {% endif %}
+  {% if cv.education %}
+    <h2>Education</h2>
+    {% for edu in cv.education %}
+      <p>{{ edu.degree }}, {{ edu.institution }} ({{ edu.duration }})</p>
+    {% endfor %}
+  {% endif %}
+</body>
+</html>

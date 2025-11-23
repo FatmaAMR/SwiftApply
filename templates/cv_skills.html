@@ -1,0 +1,26 @@
+<!-- templates/cv_skills.html -->
+<html>
+<head>
+  <style>
+    body { font-family: Arial; margin: 20px; }
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skill { background: #3498DB; color: white; padding: 5px 10px; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <h1>{{ cv.header.name }}</h1>
+  <p>{{ cv.header.email }} | {{ cv.header.linkedin }}</p>
+  <p>{{ cv.summary }}</p>
+  <h2>Skills</h2>
+  <div class="skills">
+    {% for skill in cv.skills %}
+      <span class="skill">{{ skill }}</span>
+    {% endfor %}
+  </div>
+  <h2>Experience</h2>
+  {% for job in cv.experience %}
+    <p><b>{{ job.position }}</b> – {{ job.company }} ({{ job.duration }})</p>
+    <ul>{% for resp in job.responsibilities %}<li>{{ resp }}</li>{% endfor %}</ul>
+  {% endfor %}
+</body>
+</html>

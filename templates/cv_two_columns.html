@@ -1,0 +1,33 @@
+<!-- templates/cv_two_columns.html -->
+<html>
+<head>
+  <style>
+    body { font-family: Tahoma; display: flex; }
+    .left { width: 50%; padding: 10px; background: #f9f9f9; }
+    .right { width: 50%; padding: 10px; }
+    h1 { color: #2980B9; }
+  </style>
+</head>
+<body>
+  <div class="left">
+    <h1>{{ cv.header.name }}</h1>
+    <p>{{ cv.header.email }}</p>
+    <p>{{ cv.header.linkedin }}</p>
+    <h2>Skills</h2>
+    <ul>{% for skill in cv.skills %}<li>{{ skill }}</li>{% endfor %}</ul>
+    <h2>Education</h2>
+    {% for edu in cv.education %}
+      <p>{{ edu.degree }}, {{ edu.institution }} ({{ edu.duration }})</p>
+    {% endfor %}
+  </div>
+  <div class="right">
+    <h2>Summary</h2>
+    <p>{{ cv.summary }}</p>
+    <h2>Experience</h2>
+    {% for job in cv.experience %}
+      <p><b>{{ job.position }}</b> – {{ job.company }} ({{ job.duration }})</p>
+      <ul>{% for resp in job.responsibilities %}<li>{{ resp }}</li>{% endfor %}</ul>
+    {% endfor %}
+  </div>
+</body>
+</html>

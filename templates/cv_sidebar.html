@@ -1,0 +1,33 @@
+<!-- templates/cv_sidebar.html -->
+<html>
+<head>
+  <style>
+    body { font-family: Verdana; display: flex; margin: 0; }
+    .sidebar { width: 30%; background: #f2f2f2; padding: 20px; }
+    .main { width: 70%; padding: 20px; }
+    h1, h2 { color: #34495E; }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h1>{{ cv.header.name }}</h1>
+    <p>Email: {{ cv.header.email }}</p>
+    <p>LinkedIn: {{ cv.header.linkedin }}</p>
+    <h2>Skills</h2>
+    <ul>{% for skill in cv.skills %}<li>{{ skill }}</li>{% endfor %}</ul>
+  </div>
+  <div class="main">
+    <h2>Summary</h2>
+    <p>{{ cv.summary }}</p>
+    <h2>Experience</h2>
+    {% for job in cv.experience %}
+      <p><b>{{ job.position }}</b> – {{ job.company }} ({{ job.duration }})</p>
+      <ul>{% for resp in job.responsibilities %}<li>{{ resp }}</li>{% endfor %}</ul>
+    {% endfor %}
+    <h2>Education</h2>
+    {% for edu in cv.education %}
+      <p>{{ edu.degree }}, {{ edu.institution }} ({{ edu.duration }})</p>
+    {% endfor %}
+  </div>
+</body>
+</html>

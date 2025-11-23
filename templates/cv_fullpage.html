@@ -1,0 +1,28 @@
+<!-- templates/cv_fullpage.html -->
+<html>
+<head>
+  <style>
+    body { font-family: "Helvetica Neue", Helvetica, Arial; margin: 40px; }
+    h1 { font-size: 30px; color: #2C3E50; }
+    h2 { font-size: 22px; border-bottom: 2px solid #BDC3C7; padding-bottom: 3px; margin-top: 20px; }
+    ul { list-style-type: disc; }
+  </style>
+</head>
+<body>
+  <h1>{{ cv.header.name }}</h1>
+  <p>Email: {{ cv.header.email }} | LinkedIn: {{ cv.header.linkedin }}</p>
+  <h2>Summary</h2>
+  <p>{{ cv.summary }}</p>
+  <h2>Skills</h2>
+  <ul>{% for skill in cv.skills %}<li>{{ skill }}</li>{% endfor %}</ul>
+  <h2>Experience</h2>
+  {% for job in cv.experience %}
+    <p><b>{{ job.position }}</b> at {{ job.company }} ({{ job.duration }})</p>
+    <ul>{% for resp in job.responsibilities %}<li>{{ resp }}</li>{% endfor %}</ul>
+  {% endfor %}
+  <h2>Education</h2>
+  {% for edu in cv.education %}
+    <p>{{ edu.degree }}, {{ edu.institution }} ({{ edu.duration }})</p>
+  {% endfor %}
+</body>
+</html>
