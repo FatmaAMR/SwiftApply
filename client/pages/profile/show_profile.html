@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Personal Data Review - CVGen</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#a3e635",
+                        "background-light": "#f3f4f6",
+                        "background-dark": "#0f1110",
+                        "surface-dark": "#1a1c1b",
+                        "border-dark": "#000000",
+                        "text-muted": "#90cba4"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display min-h-screen flex flex-col text-slate-900 dark:text-white antialiased overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="w-full border-b border-solid border-b-border-dark bg-background-dark sticky top-0 z-50">
+<div class="max-w-[1280px] mx-auto px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="text-primary">
+<span class="material-symbols-outlined text-[32px]">description</span>
+</div>
+<h2 class="text-white text-xl font-bold tracking-tight">SwiftApply</h2>
+</div>
+<div class="flex items-center gap-6">
+<!-- Progress Indicator (Optional context) -->
+<div class="hidden md:flex items-center gap-2 text-sm text-text-muted">
+<span>Data Entry</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-primary font-medium">Review</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span>Generate</span>
+</div>
+<div class="flex items-center gap-3 pl-6 border-l border-border-dark">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-9 border border-border-dark bg-surface-dark" data-alt="User profile avatar gradient" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAXnW14WjlD55N2_lGdhu4nJ2DyLAStYmoD79vfUWBHDla0ptnFz0ume8VdBDqcfSmmGcTYJP7H5XbxdrcJ5ojxyJF0_WBsEl9cgTelES3z8DpUch2Nb_Rcg4GI0kYGrXdR4IAS_5YqCuklldBMFV0LETH9SRt-e3nND0KiTQzPC1hRLGY2RtTt6LhlMcMkZk_W1JBsjPfEcAc6tdEg2c-dbQXFGN4dwGoi0aayzVWJ_hrhUBVKRM7Ionl2GZjqTUmEygm9FZW8JGA");'>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow flex flex-col items-center py-10 px-4 md:px-10">
+<div class="w-full max-w-[960px] flex flex-col gap-8">
+<!-- Page Heading -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-border-dark pb-6">
+<div class="flex flex-col gap-2">
+<h1 class="text-white text-3xl md:text-4xl font-black tracking-tight">Personal Information</h1>
+<p class="text-text-muted text-base font-normal">Review your details carefully before generating your CV.</p>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
+<span class="material-symbols-outlined text-primary text-[18px]">verified_user</span>
+<span class="text-primary text-xs font-semibold uppercase tracking-wider">Read Only Mode</span>
+</div>
+</div>
+<!-- Profile Card -->
+<div class="bg-surface-dark/30 border border-border-dark rounded-xl overflow-hidden backdrop-blur-sm shadow-xl">
+<!-- Identity Header -->
+<div class="flex flex-col items-center justify-center pt-10 pb-8 px-6 bg-gradient-to-b from-surface-dark to-transparent relative">
+<div class="absolute top-4 right-4">
+<button class="text-text-muted hover:text-primary transition-colors p-2" title="Edit Name">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+</div>
+<div class="size-24 rounded-full bg-background-dark border-2 border-primary/30 flex items-center justify-center mb-5 shadow-[0_0_15px_rgba(13,242,89,0.15)]">
+<span class="material-symbols-outlined text-primary text-5xl">person</span>
+</div>
+<h2 id="profile-name" class="text-white text-3xl font-bold text-center tracking-tight mb-2"></h2>
+
+<div class="px-4 py-1 rounded-full bg-primary/10 border border-primary/20">
+<p id="profile-title" class="text-primary text-lg font-semibold tracking-tight text-center"></p>
+
+</div>
+</div>
+<!-- Data Sections -->
+<div class="p-6 md:p-10 space-y-10">
+<!-- Contact Information -->
+<section>
+<h3 class="text-white text-lg font-bold mb-5 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">contact_page</span>
+                            Contact Details
+                        </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+<!-- Email -->
+<div class="flex items-start gap-4 p-4 rounded-lg border border-border-dark bg-background-dark/50 hover:border-primary/30 transition-colors group">
+<div class="mt-1 text-text-muted group-hover:text-primary transition-colors">
+<span id="profile-email" class="text-white font-medium truncate"></span>
+
+</div>
+<div class="flex flex-col gap-1 overflow-hidden">
+<span class="text-text-muted text-xs font-bold uppercase tracking-wider">Email Address</span>
+<span id="profile-email" class="text-white font-medium"></span>
+
+</div>
+</div>
+<!-- Phone -->
+<div class="flex items-start gap-4 p-4 rounded-lg border border-border-dark bg-background-dark/50 hover:border-primary/30 transition-colors group">
+<div class="mt-1 text-text-muted group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">call</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-text-muted text-xs font-bold uppercase tracking-wider">Phone Number</span>
+<span id="profile-phone" class="text-white font-medium"></span>
+
+</div>
+</div>
+<!-- Location -->
+<div class="flex items-start gap-4 p-4 rounded-lg border border-border-dark bg-background-dark/50 hover:border-primary/30 transition-colors group">
+<div class="mt-1 text-text-muted group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-text-muted text-xs font-bold uppercase tracking-wider">Location</span>
+<span id="profile-location" class="text-white font-medium"></span>
+
+</div>
+</div>
+<!-- Status/Availability (Bonus field for visual balance) -->
+<div class="flex items-start gap-4 p-4 rounded-lg border border-border-dark bg-background-dark/50 hover:border-primary/30 transition-colors group">
+<div class="mt-1 text-text-muted group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-text-muted text-xs font-bold uppercase tracking-wider">Availability</span>
+<div class="flex items-center gap-2">
+<div class="size-2 rounded-full bg-primary animate-pulse"></div>
+<span class="text-white font-medium">Immediate Start</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Divider -->
+<div class="h-px w-full bg-border-dark"></div>
+<!-- Online Presence -->
+<section>
+<h3 class="text-white text-lg font-bold mb-5 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">public</span>
+                            Online Presence
+                        </h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- LinkedIn -->
+<a class="flex flex-col gap-3 p-5 rounded-lg border border-border-dark bg-background-dark/50 hover:bg-surface-dark hover:border-primary/50 transition-all group" href="#">
+<div class="flex justify-between items-start">
+<div class="p-2 rounded-md bg-surface-dark border border-border-dark group-hover:border-primary/30 text-white">
+<span class="material-symbols-outlined">business_center</span>
+</div>
+<span class="material-symbols-outlined text-text-muted text-sm -rotate-45 group-hover:text-primary group-hover:rotate-0 transition-all">arrow_forward</span>
+</div>
+<div>
+<p class="text-text-muted text-xs font-bold uppercase tracking-wider mb-1">LinkedIn</p>
+<p id="profile-linkedin" class="text-white text-sm truncate font-medium"></p>
+
+</div>
+</a>
+<!-- GitHub -->
+<a class="flex flex-col gap-3 p-5 rounded-lg border border-border-dark bg-background-dark/50 hover:bg-surface-dark hover:border-primary/50 transition-all group" href="#">
+<div class="flex justify-between items-start">
+<div class="p-2 rounded-md bg-surface-dark border border-border-dark group-hover:border-primary/30 text-white">
+<span class="material-symbols-outlined">terminal</span>
+</div>
+<span class="material-symbols-outlined text-text-muted text-sm -rotate-45 group-hover:text-primary group-hover:rotate-0 transition-all">arrow_forward</span>
+</div>
+<div>
+<p class="text-text-muted text-xs font-bold uppercase tracking-wider mb-1">GitHub / Portfolio</p>
+<p id="profile-github" class="text-white text-sm truncate font-medium"></p>
+
+</div>
+</a>
+<!-- Website -->
+<a class="flex flex-col gap-3 p-5 rounded-lg border border-border-dark bg-background-dark/50 hover:bg-surface-dark hover:border-primary/50 transition-all group" href="#">
+<div class="flex justify-between items-start">
+<div class="p-2 rounded-md bg-surface-dark border border-border-dark group-hover:border-primary/30 text-white">
+<span class="material-symbols-outlined">language</span>
+</div>
+<span class="material-symbols-outlined text-text-muted text-sm -rotate-45 group-hover:text-primary group-hover:rotate-0 transition-all">arrow_forward</span>
+</div>
+<div>
+<p class="text-text-muted text-xs font-bold uppercase tracking-wider mb-1">Website</p>
+<p id="profile-website" class="text-white text-sm truncate font-medium"></p>
+
+</div>
+</a>
+</div>
+</section>
+</div>
+</div>
+<!-- Action Bar -->
+<div class="flex flex-col sm:flex-row justify-end items-center gap-4 mt-2 pb-12">
+<a href="edit_profile.html"><button class="w-full sm:w-auto px-8 py-3 rounded-lg border border-primary/40 text-primary font-medium hover:bg-primary/10 hover:border-primary transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">edit_note</span>
+                    Edit Information
+                </button> </a>
+<a href="../home.html">
+    <button  class="w-full sm:w-auto px-8 py-3 rounded-lg bg-primary text-background-dark font-bold hover:bg-primary/90 hover:shadow-[0_0_20px_rgba(13,242,89,0.3)] transition-all flex items-center justify-center gap-2">
+                    Confirm &amp; Next
+                    <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button></a>
+</div>
+</div>
+</main>
+<script>
+const profile = JSON.parse(localStorage.getItem("userProfile"));
+
+
+
+document.getElementById("profile-name").textContent = profile.full_name || "";
+document.getElementById("profile-title").textContent = profile.title || "";
+document.getElementById("profile-email").textContent = profile.email || "";
+document.getElementById("profile-phone").textContent = profile.phone || "";
+document.getElementById("profile-location").textContent = profile.location || "";
+
+document.getElementById("profile-linkedin").textContent = profile.linkedin_url || "";
+document.getElementById("profile-github").textContent = profile.github_url || "";
+document.getElementById("profile-website").textContent = profile.website || "";
+</script>
+
+</body></html>

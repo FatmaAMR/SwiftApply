@@ -214,3 +214,13 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+
+
+cv
+header.html
+nav.html
+test.html
+base.html
+state.py

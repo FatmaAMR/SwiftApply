@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SwiftApply - CV Generator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#a3e635", // Vibrant Lime Green
+                        "primary-dark": "#65a30d",
+                        "background-light": "#f3f4f6", // Light gray for light mode
+                        "background-dark": "#0f1110", // Deep dark background for dark mode
+                        "surface-dark": "#1a1c1b", // Slightly lighter dark for cards
+                        "surface-light": "#ffffff",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "1rem",
+                        'xl': '1.5rem',
+                        '2xl': '2rem',
+                    },
+                    boxShadow: {
+                        'glow': '0 0 40px -10px rgba(163, 230, 53, 0.3)',
+                    }
+                },
+            },
+        };
+    </script>
+<style>textarea::-webkit-scrollbar {
+            width: 8px;
+        }
+        textarea::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        textarea::-webkit-scrollbar-thumb {
+            background-color: rgba(163, 230, 53, 0.3);
+            border-radius: 20px;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(26, 28, 27, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }html:not(.dark) .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200 transition-colors duration-300 min-h-screen relative overflow-x-hidden selection:bg-primary selection:text-black">
+<div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+<div class="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] dark:bg-primary/10"></div>
+<div class="absolute bottom-[-10%] right-[-5%] w-[600px] h-[600px] bg-primary/20 rounded-full blur-[140px] dark:bg-primary/10"></div>
+<div class="absolute top-[20%] right-[10%] opacity-20 rotate-12 animate-pulse duration-[4000ms]">
+<span class="material-symbols-outlined text-9xl text-gray-500 dark:text-gray-600">add</span>
+</div>
+<div class="absolute bottom-[30%] left-[5%] opacity-10 -rotate-12 animate-bounce duration-[8000ms]">
+<span class="material-symbols-outlined text-8xl text-gray-500 dark:text-gray-600">close</span>
+</div>
+</div>
+<nav class="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-[90%] max-w-4xl">
+<div class="glass-panel rounded-full px-6 py-3 flex items-center justify-between shadow-lg">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-primary text-3xl font-bold">all_inclusive</span>
+<span class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">SwiftApply</span>
+</div>
+<div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600 dark:text-gray-400">
+<a class="hover:text-primary transition-colors" href="#">Product</a>
+<a class="text-gray-900 dark:text-white font-semibold" href="#">Generator</a>
+<a class="hover:text-primary transition-colors" href="#">About</a>
+</div>
+<button class="bg-primary hover:bg-primary-dark text-black font-semibold px-5 py-2 rounded-full text-sm transition-all shadow-[0_0_20px_rgba(163,230,53,0.4)] hover:shadow-[0_0_30px_rgba(163,230,53,0.6)]">
+                Contact Us
+            </button>
+</div>
+</nav>
+<main class="container mx-auto px-4 pt-32 pb-20 max-w-6xl flex flex-col items-center">
+<div class="text-center mb-16 max-w-2xl">
+<h1 class="text-4xl md:text-5xl font-bold mb-4 tracking-tight text-gray-900 dark:text-white">
+                Generate Your <span class="text-primary">Perfect CV</span>
+</h1>
+<p class="text-gray-500 dark:text-gray-400 text-lg">
+                Input your details below to create a tailored curriculum vitae that stands out. Our AI engine optimizes for readability and impact.
+            </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mb-12">
+<div class="glass-panel rounded-2xl p-1 shadow-lg group hover:shadow-glow transition-all duration-300">
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-6 h-full flex flex-col border border-gray-200 dark:border-gray-800">
+<div class="flex items-center mb-4 space-x-2">
+<span class="material-symbols-outlined text-primary">description</span>
+<h3 class="text-lg font-semibold text-gray-900 dark:text-white">Job Description</h3>
+</div>
+<label class="sr-only" for="job-desc">Paste the job description here</label>
+<textarea class="flex-grow w-full bg-gray-50 dark:bg-[#0f1110] border-0 rounded-lg p-4 text-sm text-gray-700 dark:text-gray-300 placeholder-gray-400 focus:ring-2 focus:ring-primary resize-none outline-none transition-shadow" id="job-desc" placeholder="Paste the full job description here..." rows="10"></textarea>
+<p class="mt-3 text-xs text-gray-400 dark:text-gray-500">
+<span class="material-symbols-outlined text-[14px] align-text-bottom mr-1">check_circle</span>
+                        We'll optimize keywords for this role
+                    </p>
+</div>
+</div>
+<div class="glass-panel rounded-2xl p-1 shadow-lg group hover:shadow-glow transition-all duration-300 relative">
+<div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gray-800 dark:bg-gray-700 text-gray-300 text-[10px] uppercase font-bold px-3 py-1 rounded-full border border-gray-600 z-10">
+                    Personal Details
+                </div>
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-6 h-full flex flex-col border border-gray-200 dark:border-gray-800">
+<div class="flex items-center mb-4 space-x-2">
+<span class="material-symbols-outlined text-primary">edit_note</span>
+<h3 class="text-lg font-semibold text-gray-900 dark:text-white">Notes &amp; Skills</h3>
+</div>
+<label class="sr-only" for="notes">Add notes or specific skills</label>
+<textarea class="flex-grow w-full bg-gray-50 dark:bg-[#0f1110] border-0 rounded-lg p-4 text-sm text-gray-700 dark:text-gray-300 placeholder-gray-400 focus:ring-2 focus:ring-primary resize-none outline-none transition-shadow" id="notes" placeholder="Key skills, achievements, or specific points you want to emphasize..." rows="10"></textarea>
+<p class="mt-3 text-xs text-gray-400 dark:text-gray-500">
+<span class="material-symbols-outlined text-[14px] align-text-bottom mr-1">check_circle</span>
+                        List comma-separated skills
+                    </p>
+</div>
+</div>
+<div class="glass-panel rounded-2xl p-1 shadow-lg group hover:shadow-glow transition-all duration-300">
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-6 h-full flex flex-col border border-gray-200 dark:border-gray-800">
+<div class="flex items-center mb-4 space-x-2">
+<span class="material-symbols-outlined text-primary">business</span>
+<h3 class="text-lg font-semibold text-gray-900 dark:text-white">Company Info</h3>
+</div>
+<label class="sr-only" for="company-info">Paste company information</label>
+<textarea class="flex-grow w-full bg-gray-50 dark:bg-[#0f1110] border-0 rounded-lg p-4 text-sm text-gray-700 dark:text-gray-300 placeholder-gray-400 focus:ring-2 focus:ring-primary resize-none outline-none transition-shadow" id="company-info" placeholder="Paste company about page or mission statement..." rows="10"></textarea>
+<p class="mt-3 text-xs text-gray-400 dark:text-gray-500">
+<span class="material-symbols-outlined text-[14px] align-text-bottom mr-1">check_circle</span>
+                        Helps tailor the tone of voice
+                    </p>
+</div>
+</div>
+</div>
+<div class="w-full max-w-4xl relative group">
+<div class="absolute inset-0 bg-primary/20 blur-xl rounded-full opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
+<div class="relative glass-panel rounded-full p-2 pr-2 md:pr-4 flex flex-col md:flex-row items-center justify-between shadow-2xl overflow-hidden">
+<div class="px-6 py-3 flex items-center space-x-4 w-full md:w-auto justify-center md:justify-start">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-black text-sm">auto_fix_high</span>
+</div>
+<span class="text-gray-700 dark:text-gray-200 font-medium text-sm md:text-base">Ready to build your professional profile?</span>
+</div>
+<button class="w-full md:w-auto mt-2 md:mt-0 bg-primary hover:bg-primary-dark text-black font-bold text-base px-8 py-4 rounded-full shadow-lg transform hover:scale-105 transition-all duration-200 flex items-center justify-center space-x-2" onclick="window.location.href='/cv-edit'">
+<span>Edit Comprehensive CV</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<svg class="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20" xmlns="http://www.w3.org/2000/svg">
+<path d="M0,50 Q400,0 800,50" fill="none" stroke="#a3e635" stroke-width="1"></path>
+</svg>
+</div>
+</main>
+<script>
+        // Simple logic to ensure dark mode is default or based on system preference
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark') // Default to dark for this design based on prompt context but allow switch
+            document.documentElement.classList.add('dark') // Forcing dark mode initially to match the vibe of the image provided
+        }
+    </script>
+
+</body></html>

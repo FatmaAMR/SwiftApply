@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>pesonal details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#a3e635",
+                        "background-light": "#f3f4f6",
+                        "background-dark": "#1a1c1b",
+                        "surface-dark": "#183422",
+                        "border-dark": "#a3e635",
+                        "text-secondary": "gray",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white overflow-x-hidden">
+    <div class="layout-container flex h-full grow flex-col">
+        <!-- Top Nav -->
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 dark:border-[#22492f] px-10 py-3 bg-white dark:bg-background-dark">
+            <div class="flex items-center gap-4 dark:text-white text-slate-900">
+                <div class="size-6 text-primary">
+                    <svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">SwiftApply</h2>
+            </div>
+            <div class="flex flex-1 justify-end gap-8">
+                <div class="flex items-center gap-9 hidden md:flex">
+                    <a class="text-slate-600 dark:text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Dashboard</a>
+                    <a class="text-slate-600 dark:text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Templates</a>
+                    <a class="text-slate-600 dark:text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Pricing</a>
+                </div>
+                <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary" data-alt="User avatar placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDYv9FpAhQG7fU7kaDkQbDXZcYIgraKo6hF05HNLDWJnZeMUASeoLae1UocQkDoGj3c6Oc5-iEnu926dGwXiJ2ExqhKpwGJl1a8ZszOew9eEovjRF8Yue5GbzorTBrcdbAuvS4Oqnqyogtqqdx4Z5ZTjvQHoimKmE8WRJQN7lENMnE6I1Zwjd6bz5x1eiIlpBgJDFxG0FDcBExVCzzoYHCBAcaFvmt6WZLNfcAJraWVe1VbklUI65FGPTVU2IL4m2Z-K6RQ9pfyEz8");'></div>
+            </div>
+        </header>
+        <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-5">
+            <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+                <!-- Breadcrumbs -->
+                <div class="flex flex-wrap gap-2 p-4 pt-0">
+                    <a class="text-slate-500 dark:text-text-secondary text-sm font-medium leading-normal hover:underline" href="#">Dashboard</a>
+                    <span class="text-slate-500 dark:text-text-secondary text-sm font-medium leading-normal">/</span>
+                    <a class="text-slate-500 dark:text-text-secondary text-sm font-medium leading-normal hover:underline" href="#">CV Builder</a>
+                    <span class="text-slate-500 dark:text-text-secondary text-sm font-medium leading-normal">/</span>
+                    <span class="text-slate-900 dark:text-white text-sm font-medium leading-normal">Personal Info</span>
+                </div>
+                <!-- Page Header & Progress -->
+                <div class="flex flex-col gap-6 p-4">
+                    <div class="flex flex-col gap-3">
+                        <div class="flex gap-6 justify-between items-end">
+                            <p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Step 1 of 4</p>
+                            <span class="text-primary text-sm font-bold">25% Completed</span>
+                        </div>
+                        <div class="rounded-full bg-gray-200 dark:bg-border-dark h-2 w-full overflow-hidden">
+                            <div class="h-full rounded-full bg-primary" style="width: 25%;"></div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <h1 class="text-slate-900 dark:text-white text-3xl md:text-4xl font-black leading-tight tracking-[-0.033em]">Personal Details</h1>
+                        <p class="text-slate-500 dark:text-text-secondary text-base font-normal leading-normal">Start with your basic information. This will appear at the top of your CV.</p>
+                    </div>
+                </div>
+                <!-- Main Form -->
+                <div class="flex flex-col gap-6 p-4">
+                    <form id="profile-form">
+
+                        <!-- Basic Info Section -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <label class="flex flex-col flex-1 gap-2">
+                                <p class="text-slate-900 dark:text-white text-sm font-medium leading-normal">Full Name</p>
+                                <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-border-dark bg-white dark:bg-surface-dark focus:border-primary h-12 placeholder:text-slate-400 dark:placeholder:text-text-secondary px-4 text-base font-normal leading-normal transition-all" placeholder="e.g. Fatma Amr" id="full-name" name="full_name" value=""/>
+                            </label>
+                            <label class="flex flex-col flex-1 gap-2">
+                                <p class="text-slate-900 dark:text-white text-sm font-medium leading-normal">Job Title</p>
+                                <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-border-dark bg-white dark:bg-surface-dark focus:border-primary h-12 placeholder:text-slate-400 dark:placeholder:text-text-secondary px-4 text-base font-normal leading-normal transition-all" placeholder="e.g. Jonior Data Analyst" id="job-title" name="title" value=""/>
+                            </label>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <label class="flex flex-col flex-1 gap-2">
+                                <p class="text-slate-900 dark:text-white text-sm font-medium leading-normal">Email Address</p>
+                                <div class="relative">
+                                    <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 dark:text-text-secondary material-symbols-outlined text-[20px]">mail</span>
+                                    <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-border-dark bg-white dark:bg-surface-dark focus:border-primary h-12 placeholder:text-slate-400 dark:placeholder:text-text-secondary pl-11 pr-4 text-base font-normal leading-normal transition-all" placeholder="fatma@example.com" type="email" id="email" name="email" value=""/>
+                                </div>
+                            </label>
+                            <label class="flex flex-col flex-1 gap-2">
+                                <p class="text-slate-900 dark:text-white text-sm font-medium leading-normal">Phone Number</p>
+                                <div class="relative">
+                                    <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 dark:text-text-secondary material-symbols-outlined text-[20px]">call</span>
+                                    <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-border-dark bg-white dark:bg-surface-dark focus:border-primary h-12 placeholder:text-slate-400 dark:placeholder:text-text-secondary pl-11 pr-4 text-base font-normal leading-normal transition-all" placeholder="+1 (555) 000-0000" type="tel" id="phone" name="phone" value=""/>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="w-full">
+                            <label class="flex flex-col flex-1 gap-2">
+                                <div class="flex justify-between">
+                                    <p class="text-slate-900 dark:text-white text-sm font-medium leading-normal">Location</p>
+                                    <span class="text-xs text-slate-400 dark:text-text-secondary">Optional</span>
+                                </div>
+                                <div class="relative">
+                                    <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 dark:text-text-secondary material-symbols-outlined text-[20px]">location_on</span>
+                                    <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-border-dark bg-white dark:bg-surface-dark focus:border-primary h-12 placeholder:text-slate-400 dark:placeholder:text-text-secondary pl-11 pr-4 text-base font-normal leading-normal transition-all" placeholder="City, Country" id="location" name="location" value=""/>
+                                </div>
+                            </label>
+                        </div>
+                        <!-- Divider -->
+                        <div class="py-4 flex items-center gap-4">
+                            <div class="h-px bg-gray-200 dark:bg-border-dark flex-1"></div>
+                            <span class="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-text-secondary">Socials &amp; Links</span>
+                            <div class="h-px bg-gray-200 dark:bg-border-dark flex-1"></div>
+                        </div>
+                        <!-- Social Links -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <label class="flex flex-col flex-1 gap-2">
+                                <p class="text-slate-900 dark:text-white text-sm font-medium leading-normal">LinkedIn</p>
+                                <div class="relative">
+                                    <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 dark:text-text-secondary material-symbols-outlined text-[20px]">work</span>
+                                    <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-border-dark bg-white dark:bg-surface-dark focus:border-primary h-12 placeholder:text-slate-400 dark:placeholder:text-text-secondary pl-11 pr-4 text-base font-normal leading-normal transition-all" placeholder="linkedin.com/in/fatma" id="linkedin" name="linkedin_url" value=""/>
+                                </div>
+                            </label>
+                            <label class="flex flex-col flex-1 gap-2">
+                                <p class="text-slate-900 dark:text-white text-sm font-medium leading-normal">GitHub / Portfolio / Kaggle</p>
+                                <div class="relative">
+                                    <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 dark:text-text-secondary material-symbols-outlined text-[20px]">code</span>
+                                    <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-border-dark bg-white dark:bg-surface-dark focus:border-primary h-12 placeholder:text-slate-400 dark:placeholder:text-text-secondary pl-11 pr-4 text-base font-normal leading-normal transition-all" placeholder="github.com/username" id="github" name="github_url" value=""/>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="w-full">
+                            <label class="flex flex-col flex-1 gap-2">
+                                <p class="text-slate-900 dark:text-white text-sm font-medium leading-normal">Personal Website</p>
+                                <div class="relative">
+                                    <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 dark:text-text-secondary material-symbols-outlined text-[20px]">language</span>
+                                    <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-border-dark bg-white dark:bg-surface-dark focus:border-primary h-12 placeholder:text-slate-400 dark:placeholder:text-text-secondary pl-11 pr-4 text-base font-normal leading-normal transition-all" placeholder="https://www.yourwebsite.com" id="website" name="website" value=""/>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- Action Bar -->
+                    <div class="flex flex-col-reverse md:flex-row items-center justify-end gap-4 p-4 mt-6 border-t border-gray-200 dark:border-[#22492f]">
+                        <button class="w-full md:w-auto px-6 h-12 rounded-lg border border-gray-300 dark:border-border-dark bg-transparent text-slate-900 dark:text-white text-base font-bold hover:bg-gray-100 dark:hover:bg-surface-dark transition-colors">
+                            Cancel
+                        </button>
+                        <button type="submit" class="w-full md:w-auto px-8 h-12 rounded-lg bg-primary text-background-dark text-base font-bold hover:bg-[#284105] transition-colors shadow-[0_0_15px_rgba(13,242,89,0.3)]" type="submit">
+                            Save &amp; Continue
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const storedProfile = localStorage.getItem("userProfile");
+
+    if (!storedProfile) return;
+
+    const profile = JSON.parse(storedProfile);
+
+    // Basic info
+    if (profile.full_name)
+        document.getElementById("full-name").value = profile.full_name;
+
+    if (profile.title)
+        document.getElementById("job-title").value = profile.title;
+
+    if (profile.email)
+        document.getElementById("email").value = profile.email;
+
+    if (profile.phone)
+        document.getElementById("phone").value = profile.phone;
+
+    if (profile.location)
+        document.getElementById("location").value = profile.location;
+
+    // Socials
+    if (profile.linkedin_url)
+        document.getElementById("linkedin").value = profile.linkedin_url;
+
+    if (profile.github_url)
+        document.getElementById("github").value = profile.github_url;
+
+    if (profile.website)
+        document.getElementById("website").value = profile.website;
+});
+</script>
+
+
+<script>
+document.getElementById("profile-form").addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const data = {
+        full_name: document.getElementById("full-name").value,
+        title: document.getElementById("job-title").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        location: document.getElementById("location").value,
+        linkedin_url: document.getElementById("linkedin").value,
+        github_url: document.getElementById("github").value,
+        website: document.getElementById("website").value,
+    };
+
+    const res = await fetch("http://127.0.0.1:8000/profile", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+    });
+
+    if (!res.ok) {
+        alert("Failed to save profile");
+        return;
+    }
+
+    const profile = await res.json();
+    localStorage.setItem("userProfile", JSON.stringify(profile));
+    window.location.href = "show_profile.html";
+});
+</script>
+
+</body>
+</html>
