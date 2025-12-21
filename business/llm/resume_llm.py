@@ -12,8 +12,8 @@ class resume_llm:
     async def parse_cv(self, cv_text: str) -> dict:
         messages = [
             {"role": "system", "content": """You are a CV parsing assistant. 
-            Return valid JSON with personal_info, education, skills, experience,
-            achievements, certifications, extra information if exist."""},
+            Return valid JSON with education, skills, experience,
+            achievements, certifications, extra information or personal_info if exist."""},
             {"role": "user", "content": cv_text}
         ]
 
@@ -99,7 +99,6 @@ Return ONLY valid JSON (no markdown, no explanation) with these exact keys:
 
             {{
             "cv": {{
-                "header": {{}},
                 "summary": "",
                 "skills": [],
                 "experience": [],

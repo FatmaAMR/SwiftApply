@@ -10,6 +10,71 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+
+
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#a3e635", // Vibrant Lime Green
+                        "primary-dark": "#65a30d",
+                        "background-light": "#f3f4f6", // Light gray for light mode
+                        "background-dark": "#0f1110", // Deep dark background for dark mode
+                        "surface-dark": "#1a1c1b", // Slightly lighter dark for cards
+                        "surface-light": "#ffffff",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "1rem",
+                        'xl': '1.5rem',
+                        '2xl': '2rem',
+                    },
+                    boxShadow: {
+                        'glow': '0 0 40px -10px rgba(163, 230, 53, 0.3)',
+                    }
+                },
+            },
+        };
+    </script>
+<style>textarea::-webkit-scrollbar {
+            width: 8px;
+        }
+        textarea::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        textarea::-webkit-scrollbar-thumb {
+            background-color: rgba(163, 230, 53, 0.3);
+            border-radius: 20px;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(26, 28, 27, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }html:not(.dark) .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+    </style>
+
+
+    
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -35,52 +100,13 @@
 <body class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white overflow-x-hidden">
     <div class="layout-container flex h-full grow flex-col">
         <!-- Top Nav -->
-        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 dark:border-[#22492f] px-10 py-3 bg-white dark:bg-background-dark">
-            <div class="flex items-center gap-4 dark:text-white text-slate-900">
-                <div class="size-6 text-primary">
-                    <svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                        <path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
-                    </svg>
-                </div>
-                <h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">SwiftApply</h2>
-            </div>
-            <div class="flex flex-1 justify-end gap-8">
-                <div class="flex items-center gap-9 hidden md:flex">
-                    <a class="text-slate-600 dark:text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Dashboard</a>
-                    <a class="text-slate-600 dark:text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Templates</a>
-                    <a class="text-slate-600 dark:text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Pricing</a>
-                </div>
-                <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary" data-alt="User avatar placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDYv9FpAhQG7fU7kaDkQbDXZcYIgraKo6hF05HNLDWJnZeMUASeoLae1UocQkDoGj3c6Oc5-iEnu926dGwXiJ2ExqhKpwGJl1a8ZszOew9eEovjRF8Yue5GbzorTBrcdbAuvS4Oqnqyogtqqdx4Z5ZTjvQHoimKmE8WRJQN7lENMnE6I1Zwjd6bz5x1eiIlpBgJDFxG0FDcBExVCzzoYHCBAcaFvmt6WZLNfcAJraWVe1VbklUI65FGPTVU2IL4m2Z-K6RQ9pfyEz8");'></div>
-            </div>
-        </header>
+        <div id="navbar-root"></div>
         <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-5">
             <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-                <!-- Breadcrumbs -->
-                <div class="flex flex-wrap gap-2 p-4 pt-0">
-                    <a class="text-slate-500 dark:text-text-secondary text-sm font-medium leading-normal hover:underline" href="#">Dashboard</a>
-                    <span class="text-slate-500 dark:text-text-secondary text-sm font-medium leading-normal">/</span>
-                    <a class="text-slate-500 dark:text-text-secondary text-sm font-medium leading-normal hover:underline" href="#">CV Builder</a>
-                    <span class="text-slate-500 dark:text-text-secondary text-sm font-medium leading-normal">/</span>
-                    <span class="text-slate-900 dark:text-white text-sm font-medium leading-normal">Personal Info</span>
-                </div>
-                <!-- Page Header & Progress -->
-                <div class="flex flex-col gap-6 p-4">
-                    <div class="flex flex-col gap-3">
-                        <div class="flex gap-6 justify-between items-end">
-                            <p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Step 1 of 4</p>
-                            <span class="text-primary text-sm font-bold">25% Completed</span>
-                        </div>
-                        <div class="rounded-full bg-gray-200 dark:bg-border-dark h-2 w-full overflow-hidden">
-                            <div class="h-full rounded-full bg-primary" style="width: 25%;"></div>
-                        </div>
-                    </div>
-                    <div class="flex flex-col gap-2">
-                        <h1 class="text-slate-900 dark:text-white text-3xl md:text-4xl font-black leading-tight tracking-[-0.033em]">Personal Details</h1>
-                        <p class="text-slate-500 dark:text-text-secondary text-base font-normal leading-normal">Start with your basic information. This will appear at the top of your CV.</p>
-                    </div>
-                </div>
+                
+                
                 <!-- Main Form -->
-                <div class="flex flex-col gap-6 p-4">
+                <div class="flex flex-col gap-6 p-4 pt-[100px]">
                     <form id="profile-form">
 
                         <!-- Basic Info Section -->
@@ -155,6 +181,19 @@
                             </label>
                         </div>
                     </div>
+
+                    <!-- Page Header & Progress -->
+                <!-- <div class="flex flex-col gap-6 p-4">
+                    <div class="flex flex-col gap-3">
+                        <div class="flex gap-6 justify-between items-end">
+                            <p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Step 1 of 2</p>
+                            <span class="text-primary text-sm font-bold">50% Completed</span>
+                        </div>
+                        <div class="rounded-full bg-gray-200 dark:bg-border-dark h-2 w-full overflow-hidden">
+                            <div class="h-full rounded-full bg-primary" style="width: 25%;"></div>
+                        </div>
+                    </div>
+                </div> -->
                     <!-- Action Bar -->
                     <div class="flex flex-col-reverse md:flex-row items-center justify-end gap-4 p-4 mt-6 border-t border-gray-200 dark:border-[#22492f]">
                         <button class="w-full md:w-auto px-6 h-12 rounded-lg border border-gray-300 dark:border-border-dark bg-transparent text-slate-900 dark:text-white text-base font-bold hover:bg-gray-100 dark:hover:bg-surface-dark transition-colors">
@@ -169,6 +208,9 @@
         </div>
     </div>
 </div>
+
+
+
 <script>
 document.addEventListener("DOMContentLoaded", () => {
     const storedProfile = localStorage.getItem("userProfile");
@@ -239,6 +281,53 @@ document.getElementById("profile-form").addEventListener("submit", async functio
     window.location.href = "show_profile.html";
 });
 </script>
+
+<script>
+const profileCard = document.getElementById("profile-card");
+const emptyState = document.getElementById("empty-profile-state");
+const deleteBtn = document.getElementById("delete-profile-btn");
+
+function renderProfile() {
+    const profileRaw = localStorage.getItem("userProfile");
+
+    if (!profileRaw) {
+        // No profile → show empty state
+        profileCard.classList.add("hidden");
+        emptyState.classList.remove("hidden");
+        return;
+    }
+
+    const profile = JSON.parse(profileRaw);
+
+    // Fill data
+    document.getElementById("profile-name").textContent = profile.full_name || "";
+    document.getElementById("profile-title").textContent = profile.title || "";
+    document.getElementById("profile-email").textContent = profile.email || "";
+    document.getElementById("profile-phone").textContent = profile.phone || "";
+    document.getElementById("profile-location").textContent = profile.location || "";
+
+    document.getElementById("profile-linkedin").textContent = profile.linkedin_url || "";
+    document.getElementById("profile-github").textContent = profile.github_url || "";
+    document.getElementById("profile-website").textContent = profile.website || "";
+
+    profileCard.classList.remove("hidden");
+    emptyState.classList.add("hidden");
+}
+
+// 🗑️ Delete profile logic
+deleteBtn.addEventListener("click", () => {
+    const confirmed = confirm("Are you sure you want to delete your personal information?");
+    if (!confirmed) return;
+
+    localStorage.removeItem("userProfile");
+    renderProfile();
+});
+
+// Initial render
+renderProfile();
+</script>
+<script src="/client/assets/nav/nav.js"></script>
+
 
 </body>
 </html>

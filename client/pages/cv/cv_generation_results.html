@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CV Generator Results</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#a3e635", // Vibrant Lime Green
+                        "primary-dark": "#65a30d",
+                        "background-light": "#f3f4f6", // Light gray for light mode
+                        "background-dark": "#0f1110", // Deep dark background for dark mode
+                        "surface-dark": "#1a1c1b", // Slightly lighter dark for cards
+                        "surface-light": "#ffffff",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "1rem",
+                        'xl': '1.5rem',
+                        '2xl': '2rem',
+                    },
+                    boxShadow: {
+                        'glow': '0 0 40px -10px rgba(163, 230, 53, 0.3)',
+                    }
+                },
+            },
+        };
+    </script>
+<style>textarea::-webkit-scrollbar {
+            width: 8px;
+        }
+        textarea::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        textarea::-webkit-scrollbar-thumb {
+            background-color: rgba(163, 230, 53, 0.3);
+            border-radius: 20px;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(26, 28, 27, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }html:not(.dark) .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+    </style>
+
+
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#bef264", // Vibrant Lime Green
+                        "primary-hover": "#a3e635",
+                        "background-dark": "#09090b", // Deep black
+                        "card-dark": "#18181b", // Zinc 900
+                        "input-dark": "#27272a", // Zinc 800
+                        "border-dark": "#3f3f46", // Zinc 700
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        'xl': '1rem',
+                        '2xl': '1.5rem',
+                        '3xl': '2rem',
+                    },
+                },
+            },
+        };
+    </script>
+<style>.custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .glass-effect {
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-background-dark font-sans text-gray-900 dark:text-gray-100 min-h-screen flex flex-col relative transition-colors duration-300 selection:bg-primary selection:text-black">
+<div class="fixed inset-0 overflow-hidden pointer-events-none -z-10 dark:block hidden">
+<div class="absolute top-[-10%] left-[-5%] w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] mix-blend-screen"></div>
+<div class="absolute bottom-[-10%] right-[-5%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] mix-blend-screen"></div>
+</div>
+   
+<div id="navbar-root"></div>
+<script src="/client/assets/nav/nav.js"></script>
+
+<main class="flex-grow w-full max-w-7xl mx-auto px-6 py-8 flex flex-col items-center pt-[100px]">
+<div class="text-center max-w-3xl mx-auto mb-12">
+<h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white tracking-tight leading-tight">
+                Your Documents are <span class="text-primary relative inline-block">
+                    Ready
+                    <svg class="absolute w-full h-3 bottom-1 left-0 text-primary/30 -z-10" preserveAspectRatio="none" viewBox="0 0 100 10">
+<path d="M0 5 Q 50 10 100 5" fill="none" stroke="currentColor" stroke-width="8"></path>
+</svg>
+</span>
+</h1>
+<p class="text-gray-500 dark:text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
+                We've generated a tailored cover letter and email template based on your profile and the job description.
+            </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full mb-12">
+<div class="bg-white dark:bg-card-dark border border-gray-200 dark:border-white/5 rounded-3xl p-6 shadow-xl flex flex-col h-[550px] relative group transition-all hover:border-primary/30">
+<div class="flex items-center justify-between mb-5">
+<div class="flex items-center gap-3">
+<div class="p-2.5 bg-gray-100 dark:bg-white/5 rounded-xl text-gray-700 dark:text-primary">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div>
+<h2 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">Cover Letter</h2>
+<p class="text-xs text-gray-500 dark:text-gray-500">Ready for application</p>
+</div>
+</div>
+<button class="flex items-center gap-2 text-xs font-semibold text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 px-4 py-2 rounded-xl transition-all hover:border-primary/50 group-hover:bg-white/10" onclick="navigator.clipboard.writeText(document.getElementById('cover-letter-text').value)">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+                        Copy Text
+                    </button>
+</div>
+<div class="flex-grow relative">
+<textarea class="custom-scrollbar w-full h-full bg-gray-50 dark:bg-input-dark border border-transparent dark:border-white/5 rounded-2xl p-5 text-sm leading-7 text-gray-600 dark:text-gray-300 resize-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 outline-none transition-all font-sans" id="cover-letter-text" spellcheck="false">Dear Hiring Manager,
+I am writing to express my strong interest in the Senior Product Designer position at Motta. With over 5 years of experience crafting intuitive digital experiences and a proven track record in SaaS product design, I am confident in my ability to contribute meaningfully to your design team.
+In my previous role at TechFlow, I led the redesign of the core dashboard which resulted in a 25% increase in user engagement. I am particularly drawn to Motta's commitment to clean, accessible design systems.
+I have attached my CV for your review and look forward to the possibility of discussing how my skills align with the needs of your team.
+Sincerely,
+Alex Johnson</textarea>
+</div>
+</div>
+<div class="bg-white dark:bg-card-dark border border-gray-200 dark:border-white/5 rounded-3xl p-6 shadow-xl flex flex-col h-[550px] relative group transition-all hover:border-primary/30">
+<div class="flex items-center justify-between mb-5">
+<div class="flex items-center gap-3">
+<div class="p-2.5 bg-gray-100 dark:bg-white/5 rounded-xl text-gray-700 dark:text-primary">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div>
+<h2 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">Email Template</h2>
+<p class="text-xs text-gray-500 dark:text-gray-500">Ready to send</p>
+</div>
+</div>
+<button class="flex items-center gap-2 text-xs font-semibold text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 px-4 py-2 rounded-xl transition-all hover:border-primary/50 group-hover:bg-white/10" onclick="navigator.clipboard.writeText(document.getElementById('email-text').value)">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+                        Copy Text
+                    </button>
+</div>
+<div class="flex-grow relative">
+<textarea class="custom-scrollbar w-full h-full bg-gray-50 dark:bg-input-dark border border-transparent dark:border-white/5 rounded-2xl p-5 text-sm leading-7 text-gray-600 dark:text-gray-300 resize-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 outline-none transition-all font-sans" id="email-text" spellcheck="false">Subject: Application for Senior Product Designer - Alex Johnson
+Hi [Name/Hiring Team],
+I hope this email finds you well.
+I recently came across the Senior Product Designer opening at Motta and wanted to formally apply. I've been following Motta's work on the new design system initiative and would love the opportunity to bring my experience in scalable UI architecture to the team.
+Attached is my CV and portfolio for your consideration.
+Best regards,
+Alex Johnson
+[Phone Number]
+[Portfolio Link]</textarea>
+</div>
+</div>
+</div>
+<div class="w-full max-w-4xl bg-white dark:bg-card-dark/80 border border-gray-200 dark:border-white/10 rounded-full p-2 pl-8 flex flex-col md:flex-row items-center justify-between gap-4 shadow-2xl glass-effect">
+<div class="flex items-center gap-3">
+<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-black">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+<span class="font-medium text-gray-700 dark:text-gray-200">Your CV has been optimized successfully!</span>
+</div>
+<div class="flex items-center gap-2 w-full md:w-auto">
+    
+<button onclick="previewCV()" class="flex-1 md:flex-none flex items-center justify-center gap-2 bg-gray-100 dark:bg-white/5 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-white/10 px-6 py-3 rounded-full font-semibold transition-all border border-transparent dark:border-white/5">
+<span class="material-symbols-outlined text-lg">visibility</span>
+                    Preview CV
+                </button>
+<!--<button class="flex-1 md:flex-none flex items-center justify-center gap-2 bg-primary text-black hover:bg-primary-hover px-8 py-3 rounded-full font-bold transition-all shadow-[0_0_15px_rgba(190,242,100,0.4)] hover:shadow-[0_0_20px_rgba(190,242,100,0.6)] hover:-translate-y-0.5">
+<span class="material-symbols-outlined text-lg">download</span>
+                    Download PDF
+                </button>-->
+</div>
+</div>
+</main>
+<footer class="mt-auto w-full py-6 text-center text-gray-500 dark:text-gray-600 text-sm">
+<p>© 2023 Motta CV Generator. All rights reserved.</p>
+</footer>
+<script>
+        // Force dark mode or respect system preference if not set, 
+        // prioritizing the dark aesthetic as per the "Dark Theme Update" request.
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage))) {
+            document.documentElement.classList.add('dark')
+        } else {
+             document.documentElement.classList.remove('dark')
+        }
+    </script>
+    <script>
+    /* ================= LOAD RESULTS FROM LOCAL STORAGE ================= */
+    function loadGeneratedDocuments() {
+        const coverLetter = localStorage.getItem("currentCoverLetter");
+        const emailContent = localStorage.getItem("currentEmailContent");
+
+        const coverTextarea = document.getElementById("cover-letter-text");
+        const emailTextarea = document.getElementById("email-text");
+
+        // Cover Letter
+        if (coverLetter && coverTextarea) {
+            coverTextarea.value = coverLetter;
+            localStorage.removeItem("currentCoverLetter"); // clear after display
+        }
+
+        // Email
+        if (emailContent && emailTextarea) {
+            emailTextarea.value = emailContent;
+            localStorage.removeItem("currentEmailContent"); // clear after display
+        }
+    }
+
+    /* ================= PREVIEW CV ================= */
+    function previewCV() {
+        window.location.href = "../../cv_templates/default.html";
+    }
+
+    /* ================= INIT ================= */
+    document.addEventListener("DOMContentLoaded", () => {
+        loadGeneratedDocuments();
+    });
+    </script>
+
+</body></html>

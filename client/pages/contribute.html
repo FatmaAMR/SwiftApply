@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SwiftApply - Contribution &amp; Contact</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+
+
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#a3e635", // Vibrant Lime Green
+                        "primary-dark": "#65a30d",
+                        "background-light": "#f3f4f6", // Light gray for light mode
+                        "background-dark": "#0f1110", // Deep dark background for dark mode
+                        "surface-dark": "#1a1c1b", // Slightly lighter dark for cards
+                        "surface-light": "#ffffff",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "1rem",
+                        'xl': '1.5rem',
+                        '2xl': '2rem',
+                    },
+                    boxShadow: {
+                        'glow': '0 0 40px -10px rgba(163, 230, 53, 0.3)',
+                    }
+                },
+            },
+        };
+    </script>
+<style>textarea::-webkit-scrollbar {
+            width: 8px;
+        }
+        textarea::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        textarea::-webkit-scrollbar-thumb {
+            background-color: rgba(163, 230, 53, 0.3);
+            border-radius: 20px;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(26, 28, 27, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }html:not(.dark) .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+    </style>
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#a3e637",
+                        "background-light": "#f7f8f6",
+                        "background-dark": "#151811",
+                        "surface-dark": "#22261c",
+                        "surface-border": "#323829",
+                        "text-secondary": "#aeb89d"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "1.5rem",
+                        "xl": "2rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar for textareas */
+        textarea::-webkit-scrollbar {
+            width: 8px;
+        }
+        textarea::-webkit-scrollbar-track {
+            background: #22261c; 
+        }
+        textarea::-webkit-scrollbar-thumb {
+            background: #323829; 
+            border-radius: 4px;
+        }
+        textarea::-webkit-scrollbar-thumb:hover {
+            background: #4a533c; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col overflow-x-hidden font-display">
+<div id="navbar-root"></div>
+<script src="/client/assets/nav/nav.js"></script>
+
+<main class="flex-grow w-full max-w-[1280px] mx-auto px-4 md:px-6 py-10 flex flex-col gap-12 pt-[100px]">
+<!-- Hero Section -->
+<section class="flex flex-col items-center text-center gap-4 max-w-3xl mx-auto py-10">
+<h1 class="text-white text-4xl md:text-6xl font-black leading-tight tracking-tight">
+                Shape the future of <span class="text-primary">SwiftApply</span>
+</h1>
+<p class="text-text-secondary text-lg md:text-xl font-normal max-w-2xl">
+                We build for you, with you. Share your brilliant ideas or get the support you need to land your next job faster.
+            </p>
+</section>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full">
+<!-- Left Column: Contribution -->
+<div class="lg:col-span-5 flex flex-col gap-8">
+<div class="bg-surface-dark border border-surface-border rounded-xl p-6 md:p-8 shadow-sm">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">lightbulb</span>
+<h2 class="text-white text-2xl font-bold">Share an Idea</h2>
+</div>
+<p class="text-text-secondary mb-6">Have a feature in mind? Let us know how we can make CV generation faster and more private for you.</p>
+<div class="flex flex-col gap-4">
+<div class="flex gap-2">
+<button class="flex-1 py-2 px-3 rounded-lg bg-surface-border/50 text-white text-sm font-medium hover:bg-surface-border transition-colors border border-transparent hover:border-primary/50 focus:border-primary focus:outline-none flex items-center justify-center gap-2 group">
+<span class="material-symbols-outlined text-[18px] text-text-secondary group-hover:text-primary">bolt</span>
+                                Feature
+                            </button>
+<button class="flex-1 py-2 px-3 rounded-lg bg-surface-border/50 text-white text-sm font-medium hover:bg-surface-border transition-colors border border-transparent hover:border-primary/50 focus:border-primary focus:outline-none flex items-center justify-center gap-2 group">
+<span class="material-symbols-outlined text-[18px] text-text-secondary group-hover:text-primary">bug_report</span>
+                                Bug
+                            </button>
+<button class="flex-1 py-2 px-3 rounded-lg bg-surface-border/50 text-white text-sm font-medium hover:bg-surface-border transition-colors border border-transparent hover:border-primary/50 focus:border-primary focus:outline-none flex items-center justify-center gap-2 group">
+<span class="material-symbols-outlined text-[18px] text-text-secondary group-hover:text-primary">thumb_up</span>
+                                Feedback
+                            </button>
+</div>
+<label class="flex flex-col gap-2">
+<span class="text-white text-sm font-medium">Your Suggestion</span>
+<textarea id="idea" class="w-full h-48 rounded-lg bg-[#1a1e16] border border-surface-border text-white p-4 focus:ring-2 focus:ring-primary focus:border-transparent placeholder:text-text-secondary/50 resize-none transition-all" placeholder="I think it would be great if..."></textarea>
+</label>
+<button class="mt-2 w-full bg-primary hover:bg-[#b5f050] text-background-dark font-bold h-12 rounded-full flex items-center justify-center gap-2 transition-transform active:scale-95" onclick="submitIdea()">
+<span>Send Idea</span>
+<span class="material-symbols-outlined text-[20px]">send</span>
+</button>
+</div>
+</div>
+<!-- Community Stat Card (Optional visual interest) -->
+<div class="bg-gradient-to-br from-surface-dark to-[#2a3023] border border-surface-border rounded-xl p-6 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-8xl text-white">groups</span>
+</div>
+<h3 class="text-white text-lg font-bold mb-1">Community Driven</h3>
+<p class="text-text-secondary text-sm">Over 150+ features implemented from user suggestions this year alone.</p>
+</div>
+</div>
+<!-- Right Column: Contact & Support -->
+<div class="lg:col-span-7 flex flex-col gap-8">
+<div class="bg-surface-dark border border-surface-border rounded-xl p-6 md:p-8 shadow-sm h-full">
+<div class="flex flex-col gap-2 mb-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-white text-3xl">support_agent</span>
+<h2 class="text-white text-2xl font-bold">Contact Support</h2>
+</div>
+<p class="text-text-secondary">Need specific help with your account? Fill out the form below and our team will get back to you within 24 hours.</p>
+</div>
+<form class="flex flex-col gap-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<label class="flex flex-col gap-2">
+<span class="text-white text-sm font-medium">Name</span>
+<input class="w-full h-12 rounded-lg bg-[#1a1e16] border border-surface-border text-white px-4 focus:ring-2 focus:ring-primary focus:border-transparent placeholder:text-text-secondary/50 transition-all" placeholder="Jane Doe" type="text"/>
+</label>
+<label class="flex flex-col gap-2">
+<span class="text-white text-sm font-medium">Email Address</span>
+<input class="w-full h-12 rounded-lg bg-[#1a1e16] border border-surface-border text-white px-4 focus:ring-2 focus:ring-primary focus:border-transparent placeholder:text-text-secondary/50 transition-all" placeholder="jane@example.com" type="email"/>
+</label>
+</div>
+<label class="flex flex-col gap-2">
+<span class="text-white text-sm font-medium">Subject</span>
+<div class="relative">
+<select class="w-full h-12 rounded-lg bg-[#1a1e16] border border-surface-border text-white px-4 pr-10 focus:ring-2 focus:ring-primary focus:border-transparent appearance-none transition-all cursor-pointer">
+<option>General Inquiry</option>
+<option>Issue</option>
+<option>supprt Question</option>
+<option>Ask for Contribution</option>
+<option>Other</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-text-secondary pointer-events-none">expand_more</span>
+</div>
+</label>
+<label class="flex flex-col gap-2">
+<span class="text-white text-sm font-medium">Message</span>
+<textarea class="w-full h-32 rounded-lg bg-[#1a1e16] border border-surface-border text-white p-4 focus:ring-2 focus:ring-primary focus:border-transparent placeholder:text-text-secondary/50 resize-none transition-all" placeholder="How can we help you?"></textarea>
+</label>
+<div class="flex flex-col md:flex-row gap-4 items-center justify-between pt-2">
+<p class="text-text-secondary text-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+                                Your data is secure. We never share your email.
+                            </p>
+<button class="w-full md:w-auto bg-white hover:bg-gray-200 text-background-dark font-bold h-12 px-8 rounded-full flex items-center justify-center gap-2 transition-colors">
+                                Send Message
+                            </button>
+</div>
+</form>
+</div>
+</div>
+</div>
+<!-- FAQ Section -->
+<section class="py-10 border-t border-surface-border">
+<h3 class="text-white text-2xl font-bold mb-8 text-center">Frequently Asked Questions</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="p-6 rounded-xl bg-surface-dark border border-surface-border hover:border-primary/30 transition-colors">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">security</span>
+<div>
+<h4 class="text-white font-bold mb-2">Is my data private?</h4>
+<p class="text-text-secondary text-sm leading-relaxed">Absolutely. We process your CV data securely and your personal information don't rendered locally in your device.</p>
+</div>
+</div>
+</div>
+<div class="p-6 rounded-xl bg-surface-dark border border-surface-border hover:border-primary/30 transition-colors">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">speed</span>
+<div>
+<h4 class="text-white font-bold mb-2">How fast is generation?</h4>
+<p class="text-text-secondary text-sm leading-relaxed">Most CVs are generated in under 10 seconds, depending on the complexity of your custom inputs.</p>
+</div>
+</div>
+</div>
+<div class="p-6 rounded-xl bg-surface-dark border border-surface-border hover:border-primary/30 transition-colors">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">paid</span>
+<div>
+<h4 class="text-white font-bold mb-2">Is there a free tier?</h4>
+<p class="text-text-secondary text-sm leading-relaxed">Yes! You can generate unlimited Resumes for free.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Direct Contact Footer -->
+<div class="flex flex-col md:flex-row justify-center items-center gap-6 pb-16 pt-6">
+<span class="text-text-secondary">Prefer email ? <b>Connect me There</b></span>
+<a class="flex items-center gap-2 text-white font-medium hover:text-primary transition-colors" href="mailto:faatmaamr.engineer@gmail.com">
+<span class="material-symbols-outlined">mail</span>
+                fatmaamr.engineer@gmail.com
+            </a>
+<span class="hidden md:block text-surface-border">|</span>
+<div class="flex gap-4">
+<a aria-label="Twitter" class="w-10 h-10 rounded-full bg-surface-dark border border-surface-border flex items-center justify-center text-white hover:bg-surface-border hover:text-primary transition-all" href="https://x.com/FatmaAmr_">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+</a>
+<a aria-label="LinkedIn" class="w-10 h-10 rounded-full bg-surface-dark border border-surface-border flex items-center justify-center text-white hover:bg-surface-border hover:text-primary transition-all" href="https://www.linkedin.com/in/fatma-amr1/">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+</a>
+</div>
+</div>
+</main>
+<script>
+  const FORM_ID = "1FAIpQLScV0fKgAnA7F-QeJyj5rM2TfI1QKC-6tLv36GXv_Zq0ZUKZQg";
+
+  function submitIdea() {
+    const idea = document.getElementById("idea").value.trim();
+
+    if (!idea) {
+      alert("Please write your idea first !");
+      return;
+    }
+
+    fetch(
+      `https://docs.google.com/forms/d/e/1FAIpQLScV0fKgAnA7F-QeJyj5rM2TfI1QKC-6tLv36GXv_Zq0ZUKZQg/formResponse`,
+      {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+          "entry.172417906": idea, 
+        }),
+      }
+    );
+
+    alert("Thanks for your idea 💚!");
+    document.getElementById("idea").value = "";
+  }
+
+</script>
+</body></html>

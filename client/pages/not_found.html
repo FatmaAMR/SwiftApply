@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SwiftApply - 404 Page Not Found</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#a3e637",
+                        "background-light": "#f7f8f6",
+                        "background-dark": "#151811",
+                        "surface-dark": "#1b2111",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased selection:bg-primary selection:text-surface-dark">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Navbar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-[#323829] px-6 py-4 md:px-10">
+<div class="flex items-center gap-4">
+<a class="flex items-center gap-2 group" href="#">
+<div class="size-8 text-slate-900 dark:text-white transition-colors group-hover:text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.16144 31.6043 14.31 30.3636C8.16144 29.123 4 26.7382 4 24C4 21.2618 8.16144 18.877 14.31 17.6364C8.16144 16.3957 4 14.0109 4 11.2727C4 7.25611 12.9543 4 24 4C35.0457 4 44 7.25611 44 11.2727Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-tight">SwiftApply</h2>
+</a>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-slate-900 dark:bg-primary text-white dark:text-[#151811] text-sm font-bold leading-normal tracking-wide transition hover:opacity-90">
+<span class="truncate">Sign In</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="flex flex-1 flex-col items-center justify-center px-4 py-12 md:py-20 relative">
+<!-- Abstract Background Decoration -->
+<div class="absolute inset-0 overflow-hidden pointer-events-none">
+<div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl opacity-50 dark:opacity-20 animate-pulse"></div>
+<div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl opacity-50 dark:opacity-20"></div>
+</div>
+<div class="z-10 flex flex-col items-center max-w-[600px] text-center space-y-8">
+<!-- 404 Visual -->
+<div class="relative">
+<h1 class="text-[120px] md:text-[180px] font-black leading-none tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-slate-800 to-slate-200 dark:from-[#323829] dark:to-primary/20 select-none">
+                        404
+                    </h1>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-12 bg-primary/20 backdrop-blur-sm rounded-xl p-4 border border-primary/30 shadow-2xl">
+<span class="material-symbols-outlined text-6xl md:text-8xl text-primary">
+                            sentiment_dissatisfied
+                        </span>
+</div>
+</div>
+<!-- Text Content -->
+<div class="space-y-4">
+<h2 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
+                        Lost in the paperwork?
+                    </h2>
+<p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed max-w-md mx-auto">
+                        We can't find the page you're looking for. It might have been moved, deleted, or never existed in the first place.
+                    </p>
+</div>
+<!-- Actions -->
+<div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto pt-4">
+<button class="flex w-full sm:w-auto min-w-[160px] cursor-pointer items-center justify-center rounded-full h-12 px-8 bg-primary text-[#151811] text-base font-bold leading-normal tracking-wide transition hover:shadow-[0_0_20px_rgba(163,230,55,0.3)] hover:-translate-y-0.5">
+<span class="material-symbols-outlined mr-2 text-[20px]">home</span>
+                        Return Home
+                    </button>
+<button class="flex w-full sm:w-auto min-w-[160px] cursor-pointer items-center justify-center rounded-full h-12 px-8 bg-white dark:bg-[#323829] border border-slate-200 dark:border-transparent text-slate-900 dark:text-white text-base font-bold leading-normal tracking-wide transition hover:bg-slate-50 dark:hover:bg-[#3f4634]">
+<span class="material-symbols-outlined mr-2 text-[20px] text-slate-400 dark:text-[#a3e637]">headset_mic</span>
+                        Contact Support
+                    </button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-slate-200 dark:border-[#323829] bg-white/50 dark:bg-[#151811]/50 backdrop-blur-sm">
+<div class="flex flex-col gap-6 px-5 py-8 text-center md:flex-row md:justify-between md:text-left max-w-7xl mx-auto items-center">
+<p class="text-slate-500 dark:text-[#aeb89d] text-sm font-normal leading-normal">© 2024 SwiftApply. All rights reserved.</p>
+<div class="flex flex-wrap items-center justify-center gap-6">
+<a class="text-slate-500 dark:text-[#aeb89d] hover:text-primary transition-colors text-sm font-normal leading-normal" href="#">Privacy Policy</a>
+<a class="text-slate-500 dark:text-[#aeb89d] hover:text-primary transition-colors text-sm font-normal leading-normal" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

@@ -216,11 +216,9 @@ __marimo__/
 .streamlit/secrets.toml
 
 
-
-
-cv
+client/pages/cv/cv_live_edit.html
 header.html
-nav.html
+
 test.html
 base.html
 state.py

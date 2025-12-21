@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SwiftApply - How It Works Demo</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+
+
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#a3e637",
+                        "background-light": "#f7f8f6",
+                        "background-dark": "#1b2111", // Deep olive/black provided in context
+                        "surface-dark": "#22261c",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+    
+<style>::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1b2111; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #323829; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4a533c; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white overflow-x-hidden selection:bg-primary selection:text-background-dark">
+<div class="relative w-full border-b border-[#323829] bg-background-dark/95 backdrop-blur sticky top-0 z-50">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 md:px-10 lg:px-40 flex justify-center">
+<div class="layout-content-container flex flex-col w-full max-w-[1200px]">
+<div id="navbar-root"></div>
+<script src="/client/assets/nav/nav.js"></script>
+</div>
+</div>
+</div>
+</div>
+<main class="flex flex-col items-center w-full pt-[70px]">
+<section class="w-full flex justify-center px-4 md:px-10 py-12 md:py-20">
+<div class="max-w-[1024px] w-full flex flex-col gap-8 text-center items-center">
+<div class="inline-flex items-center gap-2 rounded-full border border-[#4a533c] bg-[#22261c] px-3 py-1">
+<span class="size-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-xs font-medium text-white">Updated for 2026 ATS Standards</span>
+</div>
+<h1 class="text-white text-4xl md:text-6xl font-black leading-[1.1] tracking-[-0.033em] max-w-3xl">
+                    See How You Can Tailor CVs <span class="text-primary">Faster</span>
+</h1>
+<p class="text-[#aeb89d] text-lg md:text-xl font-normal leading-relaxed max-w-2xl">
+                    SwiftApply turns your messy career history into a polished, ATS-ready CV in seconds. Watch our interactive walkthrough to see the magic.
+                </p>
+<div class="w-full mt-10 md:mt-16 relative group max-w-5xl">
+<div class="absolute -inset-1 bg-gradient-to-t from-primary/10 to-primary/5 rounded-[1.5rem] blur-2xl opacity-50 group-hover:opacity-100 transition duration-1000"></div>
+<div class="relative flex flex-col w-full bg-[#1b2111] border border-[#323829] rounded-[1.5rem] overflow-hidden shadow-2xl">
+<div class="flex items-center justify-between px-6 py-3 bg-[#22261c] border-b border-[#323829]">
+<div class="flex gap-2">
+<div class="w-3 h-3 rounded-full bg-[#FF5F56] opacity-80"></div>
+<div class="w-3 h-3 rounded-full bg-[#FFBD2E] opacity-80"></div>
+<div class="w-3 h-3 rounded-full bg-[#27C93F] opacity-80"></div>
+</div>
+<div class="hidden md:flex items-center gap-2 px-4 py-1.5 bg-[#151811] rounded-full border border-[#323829] min-w-[300px] justify-center shadow-inner">
+<span class="material-symbols-outlined text-[#aeb89d] text-[14px]">lock</span>
+<span class="text-xs text-[#aeb89d] font-mono tracking-wide">app.swiftapply.com/demo-walkthrough</span>
+</div>
+<div class="w-16 flex justify-end">
+<span class="material-symbols-outlined text-[#4a533c] text-sm">more_vert</span>
+</div>
+</div>
+<div class="aspect-video w-full relative bg-[#0f110c]">
+<div class="absolute inset-0 flex items-center justify-center z-0">
+<span class="material-symbols-outlined text-[#323829] text-6xl animate-spin">progress_activity</span>
+</div>
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="absolute inset-0 w-full h-full z-10" frameborder="0" src="https://www.youtube.com/embed/LXb3EKWsInQ?controls=1&amp;rel=0&amp;modestbranding=1" title="SwiftApply Interactive Demo">
+</iframe>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="w-full flex justify-center bg-[#151811] px-4 md:px-10 py-20 border-t border-[#323829]">
+<div class="max-w-[960px] w-full flex flex-col gap-16">
+<div class="text-center space-y-4">
+<h2 class="text-white text-3xl md:text-4xl font-bold tracking-tight">The 3-Step Transformation</h2>
+<p class="text-[#aeb89d]">From blank page to application-ready in under 2 minutes.</p>
+</div>
+<div class="flex flex-col gap-6 relative">
+<div class="absolute left-8 top-8 bottom-8 w-0.5 bg-[#323829] hidden md:block z-0"></div>
+<div class="relative flex flex-col md:flex-row gap-6 md:gap-10 p-6 rounded-xl border border-[#323829] bg-[#1b2111] hover:border-primary/30 transition-colors group z-10">
+<div class="flex-shrink-0 flex items-start justify-center md:justify-start">
+<div class="size-16 rounded-full bg-[#22261c] border border-[#4a533c] flex items-center justify-center text-white text-2xl font-bold relative group-hover:scale-110 transition-transform duration-300 group-hover:border-primary group-hover:text-primary">
+<span class="material-symbols-outlined">cloud_upload</span>
+<div class="absolute -top-2 -right-2 size-6 rounded-full bg-primary text-background-dark text-xs flex items-center justify-center font-bold">1</div>
+</div>
+</div>
+<div class="flex flex-col gap-2 flex-1">
+<h3 class="text-white text-xl font-bold">Import Your History</h3>
+<p class="text-[#aeb89d] text-base leading-relaxed">
+                                Don't start from scratch. Upload your existing resume (PDF/Word) or connect your LinkedIn profile PDF. We instantly parse your work history, skills, and education into our structured data format.
+                            </p>
+<div class="mt-4 p-4 rounded-lg bg-[#22261c]/50 border border-dashed border-[#4a533c] flex items-center gap-3 text-sm text-[#aeb89d]">
+<span class="material-symbols-outlined">lock</span>
+                                Your data is parsed locally in your browser. No servers involved yet.
+                            </div>
+</div>
+</div>
+<div class="relative flex flex-col md:flex-row gap-6 md:gap-10 p-6 rounded-xl border border-[#323829] bg-[#1b2111] hover:border-primary/30 transition-colors group z-10">
+<div class="flex-shrink-0 flex items-start justify-center md:justify-start">
+<div class="size-16 rounded-full bg-[#22261c] border border-[#4a533c] flex items-center justify-center text-white text-2xl font-bold relative group-hover:scale-110 transition-transform duration-300 group-hover:border-primary group-hover:text-primary">
+<span class="material-symbols-outlined">auto_fix_high</span>
+<div class="absolute -top-2 -right-2 size-6 rounded-full bg-primary text-background-dark text-xs flex items-center justify-center font-bold">2</div>
+</div>
+</div>
+<div class="flex flex-col gap-2 flex-1">
+<h3 class="text-white text-xl font-bold">AI Optimization</h3>
+<p class="text-[#aeb89d] text-base leading-relaxed">
+                                Our AI analyzes your experience against thousands of job descriptions. It suggests stronger action verbs, fixes grammar, and highlights relevant skills for the specific role you're targeting.
+                            </p>
+<div class="mt-4 flex gap-2 flex-wrap">
+<span class="px-3 py-1 rounded-full bg-[#323829] text-xs text-white">Grammar Check</span>
+<span class="px-3 py-1 rounded-full bg-[#323829] text-xs text-white">Keyword Matching</span>
+<span class="px-3 py-1 rounded-full bg-[#323829] text-xs text-white">Tone Adjustment</span>
+</div>
+</div>
+</div>
+<div class="relative flex flex-col md:flex-row gap-6 md:gap-10 p-6 rounded-xl border border-[#323829] bg-[#1b2111] hover:border-primary/30 transition-colors group z-10">
+<div class="flex-shrink-0 flex items-start justify-center md:justify-start">
+<div class="size-16 rounded-full bg-[#22261c] border border-[#4a533c] flex items-center justify-center text-white text-2xl font-bold relative group-hover:scale-110 transition-transform duration-300 group-hover:border-primary group-hover:text-primary">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+<div class="absolute -top-2 -right-2 size-6 rounded-full bg-primary text-background-dark text-xs flex items-center justify-center font-bold">3</div>
+</div>
+</div>
+<div class="flex flex-col gap-2 flex-1">
+<h3 class="text-white text-xl font-bold">Export &amp; Apply</h3>
+<p class="text-[#aeb89d] text-base leading-relaxed">
+                                Choose from 10+ designer templates. With one click, generate a perfectly formatted PDF that beats Applicant Tracking Systems. Customize colors and fonts to match your personal brand.
+                            </p>
+<div class="mt-4 grid grid-cols-3 gap-2 w-full max-w-sm opacity-60">
+<!-- <div class="aspect-[3/4] bg-white rounded-sm"></div>
+<div class="aspect-[3/4] bg-white rounded-sm"></div>
+<div class="aspect-[3/4] bg-white rounded-sm"></div> -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="w-full flex justify-center px-4 md:px-10 py-16 bg-[#1b2111]">
+<div class="max-w-[960px] w-full rounded-2xl bg-[#22261c] border border-[#323829] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="flex flex-col gap-4 max-w-lg">
+<div class="size-12 rounded-full bg-[#323829] flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined">shield_lock</span>
+</div>
+<h2 class="text-white text-2xl font-bold">Privacy First by Design</h2>
+<p class="text-[#aeb89d]">
+                        Unlike other tools, SwiftApply processes your personal data locally on your device. Your resume details are never sent to our servers unless you choose to save them to the cloud.
+                    </p>
+</div>
+<div class="flex flex-col gap-3 w-full md:w-auto min-w-[250px]">
+<div class="flex items-center gap-3 text-white">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="text-sm font-medium">Local Processing</span>
+</div>
+<div class="flex items-center gap-3 text-white">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="text-sm font-medium">No Hidden Trackers</span>
+</div>
+<div class="flex items-center gap-3 text-white">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="text-sm font-medium">GDPR Compliant</span>
+</div>
+</div>
+</div>
+</section>
+<section class="w-full flex justify-center px-4 md:px-10 py-20 bg-background-dark border-t border-[#323829]">
+<div class="max-w-[720px] w-full text-center flex flex-col gap-8 items-center">
+<h2 class="text-white text-4xl md:text-5xl font-black tracking-tight">Ready to build your best CV?</h2>
+<p class="text-[#aeb89d] text-lg">Join 10,000+ professionals who landed their dream jobs using SwiftApply.</p>
+<div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+<a href="../index.html">
+    <button class="flex min-w-[200px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-8 bg-primary text-background-dark text-base font-bold hover:brightness-110 transition-all shadow-lg shadow-primary/10">
+                        Start Building Now
+                    </button>
+                    </a>
+<a href="../pages/soon.html">
+    <button class="flex min-w-[200px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-8 bg-[#323829] text-white text-base font-bold hover:bg-[#4a533c] transition-all">
+                        View Templates
+                    </button>
+                    </a>
+</div>
+<p class="text-[#6b7280] text-sm">No credit card required • Free plan available</p>
+</div>
+</section>
+<!--<footer class="w-full border-t border-[#323829] bg-[#0f110c] py-12 px-4 md:px-10 flex justify-center">
+<div class="max-w-[960px] w-full grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="col-span-2 md:col-span-1 flex flex-col gap-4">
+<div class="flex items-center gap-2 text-white">
+<span class="material-symbols-outlined text-primary text-3xl font-bold">all_inclusive</span>
+<span class="font-bold text-lg">SwiftApply</span>
+</div>
+<p class="text-[#6b7280] text-sm">Empowering careers with speed and privacy.</p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-white font-bold text-sm">Product</h4>
+<a class="text-[#aeb89d] hover:text-primary text-sm transition-colors" href="#">Templates</a>
+<a class="text-[#aeb89d] hover:text-primary text-sm transition-colors" href="#">Pricing</a> 
+<a class="text-[#aeb89d] hover:text-primary text-sm transition-colors" href="../pages/how_to_use.html">How It Works</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-white font-bold text-sm">Company</h4>
+<a class="text-[#aeb89d] hover:text-primary text-sm transition-colors" href="#">About Us</a>
+<a class="text-[#aeb89d] hover:text-primary text-sm transition-colors" href="#">Blog</a>
+<a class="text-[#aeb89d] hover:text-primary text-sm transition-colors" href="#">Contact</a> 
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-white font-bold text-sm">Legal</h4>
+<a class="text-[#aeb89d] hover:text-primary text-sm transition-colors" href="#">Privacy Policy</a>
+<a class="text-[#aeb89d] hover:text-primary text-sm transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>-->
+</main>
+
+</body></html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CV Import - CV Gen</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+
+
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#a3e635", // Vibrant Lime Green
+                        "primary-dark": "#65a30d",
+                        "background-light": "#f3f4f6", // Light gray for light mode
+                        "background-dark": "#0f1110", // Deep dark background for dark mode
+                        "surface-dark": "#1a1c1b", // Slightly lighter dark for cards
+                        "surface-light": "#ffffff",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "1rem",
+                        'xl': '1.5rem',
+                        '2xl': '2rem',
+                    },
+                    boxShadow: {
+                        'glow': '0 0 40px -10px rgba(163, 230, 53, 0.3)',
+                    }
+                },
+            },
+        };
+    </script>
+<style>textarea::-webkit-scrollbar {
+            width: 8px;
+        }
+        textarea::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        textarea::-webkit-scrollbar-thumb {
+            background-color: rgba(163, 230, 53, 0.3);
+            border-radius: 20px;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(26, 28, 27, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }html:not(.dark) .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+    </style>
+
+
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display antialiased min-h-screen flex flex-col overflow-x-hidden selection:bg-primary selection:text-background-dark">
+<!-- TopNavBar -->
+<div id="navbar-root"></div>
+<script src="/client/assets/nav/nav.js"></script>
+
+<!-- Main Content Layout -->
+<main class="flex-1 flex flex-col items-center justify-start py-10 px-4 sm:px-6 w-full pt-[100px]">
+<div class="w-full max-w-4xl flex flex-col gap-8">
+<!-- Page Heading -->
+<div class="flex flex-col gap-3 text-center md:text-left">
+<h1 class="text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em] text-gray-900 dark:text-white">
+                    Let's start building your CV
+                </h1>
+<p class="text-gray-500 dark:text-text-dim text-lg font-normal leading-normal max-w-2xl">
+                    Import your existing resume to get started. We'll extract your details and format them into a professional template.
+                </p>
+</div>
+<!-- Interaction Area Container -->
+<div class="bg-white dark:bg-surface-dark rounded-2xl p-6 md:p-10 shadow-xl border border-gray-200 dark:border-border-dark">
+<!-- File Upload Section -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between mb-2">
+<h3 class="text-xl font-bold dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">upload_file</span>
+                            Upload File
+                        </h3>
+<span class="text-xs font-medium px-2 py-1 rounded bg-primary/10 text-primary border border-primary/20">Recommended</span>
+</div>
+<div class="relative group cursor-pointer">
+<input class="absolute inset-0 w-full h-full opacity-0 z-10 cursor-pointer" id="cv-file" type="file"/>
+<div class="flex flex-col items-center gap-6 rounded-xl border-2 border-dashed border-gray-300 dark:border-border-dark group-hover:border-primary group-hover:bg-primary/5 transition-all duration-300 px-6 py-12 bg-gray-50 dark:bg-black/20">
+<div class="size-16 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-4xl">cloud_upload</span>
+</div>
+<div class="flex flex-col items-center gap-2 text-center">
+<p class="text-gray-900 dark:text-white text-lg font-bold leading-tight">Click to upload or drag and drop</p>
+<p class="text-gray-500 dark:text-text-dim text-sm font-normal">Supports PDF, DOCX, and TXT (Max 5MB)</p>
+</div>
+<button class="pointer-events-none flex items-center justify-center rounded-lg h-9 px-5 bg-gray-200 dark:bg-border-dark text-gray-700 dark:text-white text-sm font-bold shadow-sm">
+                                Browse Files
+                            </button>
+</div>
+</div>
+</div>
+<!-- Divider -->
+<div class="relative py-8 flex items-center">
+<div class="flex-grow border-t border-gray-200 dark:border-border-dark"></div>
+<span class="flex-shrink-0 mx-4 text-gray-400 dark:text-gray-500 text-sm font-bold tracking-widest uppercase">OR</span>
+<div class="flex-grow border-t border-gray-200 dark:border-border-dark"></div>
+</div>
+<!-- Text Paste Section -->
+<div class="flex flex-col gap-4">
+<h3 class="text-xl font-bold dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">description</span>
+                        Paste CV Text
+                    </h3>
+<div class="relative">
+<textarea class="form-textarea w-full min-h-[200px] rounded-xl border-gray-300 dark:border-border-dark bg-gray-50 dark:bg-black/20 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-text-dim/50 focus:border-primary focus:ring-1 focus:ring-primary p-5 text-base font-normal leading-relaxed resize-y transition-shadow" id="cv-text" placeholder="Paste your full resume content here from your existing document..."></textarea>
+<div class="absolute bottom-4 right-4">
+<button id="delete-btn"class="p-2 text-gray-400 hover:text-primary transition-colors" title="Clear text">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Process Action -->
+<div class="mt-10 pt-6 border-t border-gray-200 dark:border-border-dark flex justify-end">
+<button id="process-btn" class="group flex w-full md:w-auto min-w-[200px] cursor-pointer items-center justify-center gap-2 rounded-lg h-12 px-8 bg-primary text-background-dark text-base font-bold leading-normal tracking-[0.015em] hover:bg-green-400 hover:shadow-[0_0_20px_rgba(13,242,89,0.3)] transition-all duration-300">
+<span>Process CV</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+
+</main>
+<!-- Footer Pattern/Decoration -->
+<div class="fixed bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-20 pointer-events-none"></div>
+<script>
+document.getElementById("process-btn").addEventListener("click", async () => {
+    const fileInput = document.getElementById("cv-file");
+    const textInput = document.getElementById("cv-text");
+
+    const formData = new FormData();
+
+    if (fileInput.files.length > 0) {
+        formData.append("file", fileInput.files[0]);
+    }
+
+    if (textInput.value.trim() !== "") {
+        formData.append("text", textInput.value);
+    }
+
+    if (!formData.has("file") && !formData.has("text")) {
+        alert("Please upload a file or paste CV text");
+        return;
+    }
+
+    const res = await fetch("http://127.0.0.1:8000/comprehensive-resume/upload", {
+        method: "POST",
+        body: formData
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+        alert(data.message || "Failed to process CV");
+        return;
+    }
+
+    // Optional: store parsed CV
+    localStorage.setItem("parsedCV", JSON.stringify(data.cv));
+
+    // Redirect
+    window.location.href = "cv_template.html";
+});
+</script>
+
+</body></html>

@@ -6,6 +6,11 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
 <script>
         tailwind.config = {
             darkMode: "class",
@@ -81,8 +86,15 @@
 <a class="text-gray-900 dark:text-white font-semibold" href="#">Generator</a>
 <a class="hover:text-primary transition-colors" href="#">About</a>
 </div>
+
+<button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors text-gray-500 dark:text-gray-400" onclick="toggleTheme()">
+<span class="material-symbols-rounded text-xl block dark:hidden">dark_mode</span>
+<span class="material-symbols-rounded text-xl hidden dark:block">light_mode</span>
+</button>
+
 <button class="bg-primary hover:bg-primary-dark text-black font-semibold px-5 py-2 rounded-full text-sm transition-all shadow-[0_0_20px_rgba(163,230,53,0.4)] hover:shadow-[0_0_30px_rgba(163,230,53,0.6)]">
-                Contact Us
+        <!--<span class="material-symbols-rounded text-lg">edit</span>-->
+                    Manage Profile
             </button>
 </div>
 </nav>
@@ -151,8 +163,8 @@
 </div>
 <span class="text-gray-700 dark:text-gray-200 font-medium text-sm md:text-base">Ready to build your professional profile?</span>
 </div>
-<button class="w-full md:w-auto mt-2 md:mt-0 bg-primary hover:bg-primary-dark text-black font-bold text-base px-8 py-4 rounded-full shadow-lg transform hover:scale-105 transition-all duration-200 flex items-center justify-center space-x-2" onclick="window.location.href='/cv-edit'">
-<span>Edit Comprehensive CV</span>
+<button class="w-full md:w-auto mt-2 md:mt-0 bg-primary hover:bg-primary-dark text-black font-bold text-base px-8 py-4 rounded-full shadow-lg transform hover:scale-105 transition-all duration-200 flex items-center justify-center space-x-2" onclick="generateCV()">
+<span>Generate Custom Resume</span>
 <span class="material-symbols-outlined">arrow_forward</span>
 </button>
 </div>
@@ -162,6 +174,59 @@
 </div>
 </main>
 <script>
+    function toggleTheme() {
+            const html = document.querySelector('html');
+            html.classList.toggle('dark');
+        }
+        // Modal Logic
+        const modal = document.getElementById('templateModal');
+        function openTemplateModal() {
+            modal.style.display = 'flex';
+            // Simple animation
+            modal.querySelector('div').style.opacity = '0';
+            modal.querySelector('div').style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                modal.querySelector('div').style.transition = 'all 0.3s ease-out';
+                modal.querySelector('div').style.opacity = '1';
+                modal.querySelector('div').style.transform = 'scale(1)';
+            }, 10);
+        }
+        function closeTemplateModal() {
+            modal.querySelector('div').style.opacity = '0';
+            modal.querySelector('div').style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+        function selectTemplate(templateName) {
+            // Visual feedback
+            const btn = event.currentTarget.querySelector('span');
+            const originalText = btn.innerText;
+            btn.innerText = "Applying...";
+            btn.classList.add('bg-white', 'text-black');
+            setTimeout(() => {
+                // Simulate redirection to Home Page
+                alert(`Template "${templateName}" selected! Returning to Home Page with new template applied.`);
+                window.location.href = "index.html"; // Simulated redirect
+                closeTemplateModal();
+            }, 800);
+        }
+        // Close modal when clicking outside
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeTemplateModal();
+            }
+        });
+        // Initialize editable visual cues
+        document.querySelectorAll('[contenteditable="true"]').forEach(el => {
+            el.addEventListener('focus', () => {
+                // Could add specific logic here to save state
+            });
+        });
+
+
+
+        
         // Simple logic to ensure dark mode is default or based on system preference
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark')
@@ -170,5 +235,79 @@
             document.documentElement.classList.add('dark') // Forcing dark mode initially to match the vibe of the image provided
         }
     </script>
+<script>
+async function generateCV() {
+    const parsedCV = JSON.parse(localStorage.getItem("parsedCV"));
+
+    if (!parsedCV) {
+        alert("Please upload or paste your CV first");
+        return;
+    }
+
+    const payload = {
+        parsed_cv: parsedCV,
+        job_description: document.getElementById("job-desc").value,
+        notes: document.getElementById("notes").value,
+        company_info: document.getElementById("company-info").value
+    };
+
+    const res = await fetch("http://127.0.0.1:8000/generate-cv", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+        alert(data.message || "Failed to generate CV");
+        return;
+    }
+
+    /* ================= SAVE CV ================= */
+    const templateId = "template_01";
+    const fileName = "cv1";
+
+    let generatedCVs = JSON.parse(localStorage.getItem("generatedCVs") || "[]");
+
+    generatedCVs.push({
+        fileName,
+        cvData: data.cv,           
+        templateId
+    });
+
+    localStorage.setItem("generatedCVs", JSON.stringify(generatedCVs));
+
+    /* ================= SAVE COVER LETTER ================= */
+    if (data.cover_letter?.content) {
+        localStorage.setItem(
+            "currentCoverLetter",
+            data.cover_letter.content
+        );
+    }
+
+    /* ================= SAVE EMAIL ================= */
+    if (data.email_template) {
+        const emailText = 
+`Subject: ${data.email_template.subject || ""}
+
+${data.email_template.body || ""}`;
+
+        localStorage.setItem(
+            "currentEmailContent",
+            emailText
+        );
+    }
+
+    /* ================= OPTIONAL METADATA ================= */
+    localStorage.setItem(
+        "cvMetadata",
+        JSON.stringify(data.metadata || {})
+    );
+
+    /* ================= NAVIGATE ================= */
+    window.location.href = "cv/cv_generation_results.html";
+}
+</script>
 
 </body></html>

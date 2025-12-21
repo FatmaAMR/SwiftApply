@@ -10,6 +10,69 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+
+
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#a3e635", // Vibrant Lime Green
+                        "primary-dark": "#65a30d",
+                        "background-light": "#f3f4f6", // Light gray for light mode
+                        "background-dark": "#0f1110", // Deep dark background for dark mode
+                        "surface-dark": "#1a1c1b", // Slightly lighter dark for cards
+                        "surface-light": "#ffffff",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "1rem",
+                        'xl': '1.5rem',
+                        '2xl': '2rem',
+                    },
+                    boxShadow: {
+                        'glow': '0 0 40px -10px rgba(163, 230, 53, 0.3)',
+                    }
+                },
+            },
+        };
+    </script>
+<style>textarea::-webkit-scrollbar {
+            width: 8px;
+        }
+        textarea::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        textarea::-webkit-scrollbar-thumb {
+            background-color: rgba(163, 230, 53, 0.3);
+            border-radius: 20px;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(26, 28, 27, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }html:not(.dark) .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+    </style>
+
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -40,32 +103,10 @@
 </head>
 <body class="bg-background-light dark:bg-background-dark font-display min-h-screen flex flex-col text-slate-900 dark:text-white antialiased overflow-x-hidden">
 <!-- Top Navigation Bar -->
-<header class="w-full border-b border-solid border-b-border-dark bg-background-dark sticky top-0 z-50">
-<div class="max-w-[1280px] mx-auto px-6 h-16 flex items-center justify-between">
-<div class="flex items-center gap-3">
-<div class="text-primary">
-<span class="material-symbols-outlined text-[32px]">description</span>
-</div>
-<h2 class="text-white text-xl font-bold tracking-tight">SwiftApply</h2>
-</div>
-<div class="flex items-center gap-6">
-<!-- Progress Indicator (Optional context) -->
-<div class="hidden md:flex items-center gap-2 text-sm text-text-muted">
-<span>Data Entry</span>
-<span class="material-symbols-outlined text-[16px]">chevron_right</span>
-<span class="text-primary font-medium">Review</span>
-<span class="material-symbols-outlined text-[16px]">chevron_right</span>
-<span>Generate</span>
-</div>
-<div class="flex items-center gap-3 pl-6 border-l border-border-dark">
-<div class="bg-center bg-no-repeat bg-cover rounded-full size-9 border border-border-dark bg-surface-dark" data-alt="User profile avatar gradient" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAXnW14WjlD55N2_lGdhu4nJ2DyLAStYmoD79vfUWBHDla0ptnFz0ume8VdBDqcfSmmGcTYJP7H5XbxdrcJ5ojxyJF0_WBsEl9cgTelES3z8DpUch2Nb_Rcg4GI0kYGrXdR4IAS_5YqCuklldBMFV0LETH9SRt-e3nND0KiTQzPC1hRLGY2RtTt6LhlMcMkZk_W1JBsjPfEcAc6tdEg2c-dbQXFGN4dwGoi0aayzVWJ_hrhUBVKRM7Ionl2GZjqTUmEygm9FZW8JGA");'>
-</div>
-</div>
-</div>
-</div>
-</header>
+<div id="navbar-root"></div>
+<script src="/client/assets/nav/nav.js"></script>
 <!-- Main Content -->
-<main class="flex-grow flex flex-col items-center py-10 px-4 md:px-10">
+<main class="flex-grow flex flex-col items-center py-10 px-4 md:px-10 pt-[140px]">
 <div class="w-full max-w-[960px] flex flex-col gap-8">
 <!-- Page Heading -->
 <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-border-dark pb-6">
@@ -78,13 +119,14 @@
 <span class="text-primary text-xs font-semibold uppercase tracking-wider">Read Only Mode</span>
 </div>
 </div>
+<div id="profile-card">
 <!-- Profile Card -->
 <div class="bg-surface-dark/30 border border-border-dark rounded-xl overflow-hidden backdrop-blur-sm shadow-xl">
 <!-- Identity Header -->
 <div class="flex flex-col items-center justify-center pt-10 pb-8 px-6 bg-gradient-to-b from-surface-dark to-transparent relative">
 <div class="absolute top-4 right-4">
-<button class="text-text-muted hover:text-primary transition-colors p-2" title="Edit Name">
-<span class="material-symbols-outlined text-[20px]">edit</span>
+<button class="text-text-muted hover:text-primary transition-colors p-2" title="Delete Name">
+<span class="material-symbols-outlined text-[20px]" id="delete-profile-btn">delete</span>
 </button>
 </div>
 <div class="size-24 rounded-full bg-background-dark border-2 border-primary/30 flex items-center justify-center mb-5 shadow-[0_0_15px_rgba(13,242,89,0.15)]">
@@ -109,7 +151,7 @@
 <!-- Email -->
 <div class="flex items-start gap-4 p-4 rounded-lg border border-border-dark bg-background-dark/50 hover:border-primary/30 transition-colors group">
 <div class="mt-1 text-text-muted group-hover:text-primary transition-colors">
-<span id="profile-email" class="text-white font-medium truncate"></span>
+<span class="material-symbols-outlined">mail</span>
 
 </div>
 <div class="flex flex-col gap-1 overflow-hidden">
@@ -223,6 +265,26 @@
 </button></a>
 </div>
 </div>
+
+</div>
+
+
+<!-- Empty State -->
+<div id="empty-profile-state" class="hidden bg-surface-dark/30 border border-border-dark rounded-xl p-10 text-center">
+    <span class="material-symbols-outlined text-primary text-5xl mb-4 block">person_add</span>
+    <h3 class="text-white text-xl font-bold mb-2">
+        Personal information is missing
+    </h3>
+    <p class="text-text-muted mb-6">
+        Please add your personal information first to continue.
+    </p>
+    <a href="edit_profile.html">
+        <button class="px-6 py-3 rounded-lg bg-primary text-background-dark font-bold hover:bg-primary/90 transition-all">
+            Add Personal Information
+        </button>
+    </a>
+</div>
+
 </main>
 <script>
 const profile = JSON.parse(localStorage.getItem("userProfile"));
