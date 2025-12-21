@@ -84,66 +84,69 @@ Return ONLY valid JSON (no markdown, no explanation) with these exact keys:
         return analysis_json
 
     async def generate_cv(self, parsed_cv: dict, analysis: dict, job_description_text:str, company_info:str) -> dict:
-        """
-        Generate a final CV JSON using the parsed CV and analysis.
-        """
         prompt = f"""
-            Generate:
-            1. Parsed, customized to the job description used to get the analysis results, CV structured into clear sections.
-            2. A professional cover letter tailored to the CV.
-            3. A professional email template for sending the CV and cover letter.
-            4. Recommended sections for improving the CV based on gaps.
-            5. Detect missing or incomplete sections and list them.
-            6. If some sections in the CV text are empty or unclear, return empty arrays or empty strings — do NOT invent content.
-            7. The JSON MUST be strictly valid and follow this exact structure:
+You are an expert CV writer, career coach, and HR analyst. Your task is to generate a highly professional and ATS-optimized CV, cover letter, and email template for a candidate. Follow all instructions carefully.
 
-            {{
-            "cv": {{
-                "summary": "",
-                "skills": [],
-                "experience": [],
-                "education": [],
-                "projects": [],
-                "certifications": [],
-                "languages": [],
-                "tools": [],
-                "additional_sections": {{}}
-            }},
-            "cover_letter": {{
-                "content": "",
-                "tone": "",
-                "length": ""
-            }},
-            "email_template": {{
-                "subject": "",
-                "body": ""
-            }},
-            "metadata": {{
-                "recommended_sections": [],
-                "missing_sections": [],
-                "warnings": []
-            }}
-            }}
+1. Generate a **final CV JSON** using the parsed CV and analysis.
+2. The CV must be **customized to the provided job description**:
+    - Rewrite terms, skills, and experience to **match the job description language**.
+    - Highlight **achievements, measurable outcomes, and impact**.
+    - Use numbers, percentages, and data wherever possible to quantify achievements.
+3. Maintain a professional, clear, and concise structure, preserving candidate data integrity.
+4. Generate a **cover letter** that:
+    - Is tailored to the CV and job description.
+    - Emphasizes key skills, accomplishments, and alignment with the company.
+    - Uses persuasive, professional language.
+5. Generate a **professional email template** for sending the CV and cover letter.
+6. Detect **missing or incomplete sections** and return them in `metadata.missing_sections`.
+7. Suggest **additional sections or improvements** in `metadata.recommended_sections`.
+8. If a section is empty, unclear, or missing, do **NOT invent content**; return empty arrays or empty strings.
+9. Always maintain the **exact JSON structure** below:
 
-            Return ONLY the JSON.
+{{
+"cv": {{
+    "summary": "",
+    "skills": [],
+    "experience": [],
+    "education": [],
+    "projects": [],
+    "certifications": [],
+    "languages": [],
+    "tools": [],
+    "additional_sections": {{}}
+}},
+"cover_letter": {{
+    "content": "",
+    "tone": "",
+    "length": ""
+}},
+"email_template": {{
+    "subject": "",
+    "body": ""
+}},
+"metadata": {{
+    "recommended_sections": [],
+    "missing_sections": [],
+    "warnings": []
+}}
+}}
 
-            Consider and use the following:
+10. Use the following inputs and context carefully:
+- Candidate original data:
+{json.dumps(parsed_cv)}
 
-            Candidate original data:
-            {json.dumps(parsed_cv)}
+- Analysis and recommendations:
+{json.dumps(analysis)}
 
-            Analysis and recommendations:
-            {json.dumps(analysis)}
-            
-            Job description:
-            {job_description_text}
-            
-            Comapny kind of business and priorities:
-            {company_info}
-            
-            whaen writting all of CV, Coverletter, and Email content.
+- Job description:
+{job_description_text}
 
-            """
+- Company type, business priorities, and culture:
+{company_info}
+
+11. ALWAYS return ONLY valid JSON without any extra text or commentary.
+"""
+
 
         messages = [
             {"role": "system", "content": """You are a senior ATS-optimized CV writer. 
