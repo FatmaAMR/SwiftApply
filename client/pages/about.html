@@ -71,13 +71,10 @@
                 Input your details to create a tailored curriculum vitae that stands out. Our AI engine optimizes for readability and impact without compromising your data.
             </p>
 <div class="flex flex-col sm:flex-row justify-center gap-4">
-<a href="../pages/profile/edit_profile.html">
-    
-    <button class="bg-primary hover:bg-primary-hover text-gray-900 font-bold py-4 px-8 rounded-xl text-lg transition-all shadow-lg hover:shadow-primary/20 flex items-center justify-center gap-2">
+
+    <button class="bg-primary hover:bg-primary-hover text-gray-900 font-bold py-4 px-8 rounded-xl text-lg transition-all shadow-lg hover:shadow-primary/20 flex items-center justify-center gap-2" onclick="navigate_locally()">
 <span class="material-icons-outlined">auto_awesome</span>
                     Generate my CV
-                </button>
-                </a>
 
 <a href="../pages/how_to_use.html">
     <button class="bg-surface-light dark:bg-surface-dark hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 font-semibold py-4 px-8 rounded-xl text-lg transition-all flex items-center justify-center gap-2">
@@ -351,4 +348,34 @@
 </footer>
 </body>
 <script src="../assets/nav/nav.js"></script>
+<button 
+    class="bg-primary hover:bg-primary-hover text-gray-900 font-bold py-4 px-8 rounded-xl text-lg transition-all shadow-lg hover:shadow-primary/20 flex items-center justify-center gap-2"
+    onclick="navigate_locally()"
+>
+    <span class="material-icons-outlined">auto_awesome</span>
+    Generate my CV
+</button>
+
+<script>
+function navigate_locally() {
+   
+    const userProfile = JSON.parse(localStorage.getItem("userProfile") || "null");
+
+    if (userProfile && userProfile.full_name && userProfile.email) {
+        
+        window.location.href = "../";
+    } else {
+        
+        window.location.href = "../pages/profile/edit_profile.html";
+    }
+}
+</script>
+
+
+
+
+
+
+
+
 </html>
