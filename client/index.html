@@ -216,6 +216,8 @@
                 modal.querySelector('div').style.transform = 'scale(1)';
             }, 10);
         }
+
+
         function closeTemplateModal() {
             modal.querySelector('div').style.opacity = '0';
             modal.querySelector('div').style.transform = 'scale(0.95)';
@@ -223,6 +225,8 @@
                 modal.style.display = 'none';
             }, 300);
         }
+
+
         function selectTemplate(templateName) {
             // Visual feedback
             const btn = event.currentTarget.querySelector('span');
@@ -236,6 +240,9 @@
                 closeTemplateModal();
             }, 800);
         }
+
+
+
         // Close modal when clicking outside
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
@@ -251,7 +258,8 @@
 
 
 
-        
+    </script>
+    <!--<script>
         // Simple logic to ensure dark mode is default or based on system preference
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark')
@@ -260,6 +268,7 @@
             document.documentElement.classList.add('dark') // Forcing dark mode initially to match the vibe of the image provided
         }
     </script>
+-->
 <script>
 async function generateCV() {
     const parsedCV = JSON.parse(localStorage.getItem("parsedCV"));

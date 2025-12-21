@@ -200,6 +200,9 @@ function exportPDF() {
     jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
   };
   html2pdf().set(opt).from(element).save().then(() => {
+
+      localStorage.removeItem("generatedCVs");
+
     // Redirect after PDF is saved
     window.location.href = "/client/index.html";
   });
