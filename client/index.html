@@ -187,10 +187,9 @@
     } catch (e) {}
 
     if (!parsedCV && !userProfile) {
-        window.location.replace("/landing.html");
+        window.location.replace("/client/pages/landing.html");
         return;
     }
-
     if (parsedCV && (!userProfile || !userProfile.full_name || !userProfile.email)) {
         window.location.replace("pages/profile/edit_profile.html");
         return;
