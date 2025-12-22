@@ -1,7 +1,5 @@
 # SwiftApply
 
-![SwiftApply Logo](/client/assets/images/logo.png)
-
 **SwiftApply** is an innovative tool for generating professional CVs quickly and securely. It leverages AI to optimize resumes according to job descriptions, enhancing your chances of landing your dream job.  
 
 ---
