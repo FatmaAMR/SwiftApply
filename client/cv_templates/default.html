@@ -41,9 +41,10 @@ tailwind.config = {
 
 <style>
 body { margin:0; padding:0; }
-.page { box-shadow: none; width:210mm; padding:2rem; margin:1rem auto; background-color:white; }
+.page { box-shadow: none; width:210mm; padding: 20mm 20mm; margin:1rem auto; background-color:white; }
 .skill-badge { display:inline-block; background:#2563eb;color:white;padding:2px 6px;border-radius:4px;margin:2px 2px;font-size:0.85rem; }
 .export-btn { position:fixed; bottom:20px; right:20px; background:#0f2b66; color:white; padding:12px 16px; border-radius:9999px; font-weight:bold; display:flex; align-items:center; gap:5px; cursor:pointer; z-index:9999; }
+
 
 </style>
 </head>
@@ -201,10 +202,10 @@ function exportPDF() {
   };
   html2pdf().set(opt).from(element).save().then(() => {
 
-      localStorage.removeItem("generatedCVs");
+      //localStorage.removeItem("generatedCVs");
 
     // Redirect after PDF is saved
-    window.location.href = "/client/index.html";
+    //window.location.href = "/client/index.html";
   });
 }
 

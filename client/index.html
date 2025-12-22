@@ -199,10 +199,16 @@
 </script>
 
 <script>
-    function toggleTheme() {
-            const html = document.querySelector('html');
-            html.classList.toggle('dark');
-        }
+   function toggleTheme() {
+  const html = document.documentElement;
+  html.classList.toggle("dark");
+
+  if(html.classList.contains("dark")) {
+    localStorage.setItem("theme", "dark");
+  } else {
+    localStorage.setItem("theme", "light");
+  }
+}
         // Modal Logic
         const modal = document.getElementById('templateModal');
         function openTemplateModal() {
