@@ -306,16 +306,13 @@ async function generateCV() {
     /* ================= SAVE CV ================= */
     const templateId = "template_01";
     const fileName = "cv1";
-
-    let generatedCVs = JSON.parse(localStorage.getItem("generatedCVs") || "[]");
-
-    generatedCVs.push({
+    const newCVList = [{
         fileName,
-        cvData: data.cv,           
+        cvData: data.cv,          
         templateId
-    });
+    }];
 
-    localStorage.setItem("generatedCVs", JSON.stringify(generatedCVs));
+    localStorage.setItem("generatedCVs", JSON.stringify(newCVList));    
 
     /* ================= SAVE COVER LETTER ================= */
     if (data.cover_letter?.content) {
