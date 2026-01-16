@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View All LocalStorage</title>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: #a3e635;            
+            font-family: monospace;    
+            padding: 20px;
+        }
+        pre {
+            white-space: pre-wrap;       
+            word-wrap: break-word;
+        }
+        .empty-msg {
+            color: #ff6b6b;
+        }
+    </style>
+</head>
+<body>
+
+    <h3>All LocalStorage Content:</h3>
+    <pre id="json-viewer"></pre>
+
+    <button onclick="clearStorage()" style="margin-top:20px; padding:10px; background:red; color:white; border:none; cursor:pointer;">
+        Clear All Storage
+    </button>
+
+    <script>
+        const element = document.getElementById("json-viewer");
+        const allData = {};
+
+        // 1. Loop through all keys in localStorage
+        if (localStorage.length > 0) {
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                const value = localStorage.getItem(key);
+
+                // 2. Try to parse JSON strings so they look nice
+                try {
+                    allData[key] = JSON.parse(value);
+                } catch (e) {
+                    // If it's not JSON (just a plain string), keep it as is
+                    allData[key] = value;
+                }
+            }
+
+            // 3. Display the result formatted
+            element.textContent = JSON.stringify(allData, null, 4);
+        } else {
+            element.textContent = "LocalStorage is empty.";
+            element.className = "empty-msg";
+        }
+
+        // Helper function to clear storage
+        function clearStorage() {
+            if(confirm("Are you sure you want to delete everything?")) {
+                localStorage.clear();
+                location.reload();
+            }
+        }
+    </script>
+
+</body>
+</html>

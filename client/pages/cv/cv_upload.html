@@ -187,11 +187,10 @@ document.getElementById("process-btn").addEventListener("click", async () => {
         return;
     }
 
-    // Optional: store parsed CV
+    
     localStorage.setItem("parsedCV", JSON.stringify(data.cv));
 
-    // Redirect
-    window.location.href = "client/index.html";
+    window.location.href = "/client/index.html";
 });
 </script>
 

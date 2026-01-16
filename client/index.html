@@ -93,7 +93,7 @@
 <span class="material-symbols-rounded text-xl hidden dark:block">light_mode</span>
 </button>
 
-<a href= 'pages/profile/edit_profile.html'><button class="bg-primary hover:bg-primary-dark text-black font-semibold px-5 py-2 rounded-full text-sm transition-all shadow-[0_0_20px_rgba(163,230,53,0.4)] hover:shadow-[0_0_30px_rgba(163,230,53,0.6)]" id="manage-profile-btn">
+<a href= '/client/pages/profile/show_profile.html'><button class="bg-primary hover:bg-primary-dark text-black font-semibold px-5 py-2 rounded-full text-sm transition-all shadow-[0_0_20px_rgba(163,230,53,0.4)] hover:shadow-[0_0_30px_rgba(163,230,53,0.6)]" id="manage-profile-btn">
         <!--<span class="material-symbols-rounded text-lg">edit</span>-->
                     Manage Profile
             </button>
@@ -176,7 +176,7 @@
 </div>
 </main>
 
-<script>
+<!-- <script>
 (function routeGuard() {
     let parsedCV = null;
     let userProfile = null;
@@ -195,7 +195,7 @@
         return;
     } 
 })();
-</script>
+</script> -->
 
 <script>
    function toggleTheme() {
@@ -345,7 +345,7 @@ ${data.email_template.body || ""}`;
     );
 
     /* ================= NAVIGATE ================= */
-    window.location.href = "cv/cv_generation_results.html";
+    window.location.href = "/client/pages/cv/cv_generation_results.html";
 }
 </script>
 

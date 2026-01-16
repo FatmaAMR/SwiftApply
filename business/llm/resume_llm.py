@@ -13,7 +13,7 @@ class resume_llm:
         messages = [
             {"role": "system", "content": """You are a CV parsing assistant. 
             Return valid JSON with education, skills, experience,
-            achievements, certifications, extra information or personal_info if exist."""},
+            achievements, certifications, or extra information if exist."""},
             {"role": "user", "content": cv_text}
         ]
 

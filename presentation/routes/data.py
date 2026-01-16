@@ -36,7 +36,7 @@ async def upload_cv(
         cv_text += "\n" + text
 
     parsed_cv = await llm.parse_cv(cv_text)
-    #state.user_parsed_cv = parsed_cv
+    
 
     return JSONResponse(
         status_code=200,

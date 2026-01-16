@@ -278,7 +278,7 @@ document.getElementById("profile-form").addEventListener("submit", async functio
 
     const profile = await res.json();
     localStorage.setItem("userProfile", JSON.stringify(profile));
-    window.location.href = "show_profile.html";
+    window.location.href = "/client/pages/profile/show_profile.html";
 });
 </script>
 
